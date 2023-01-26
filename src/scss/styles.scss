@@ -1,5 +1,9 @@
 @import "./home";
 @import "./navbar";
 
+body {
+    margin: 0;
+}
+
 $enable-ltr: true;
 $enable-rtl: true;
