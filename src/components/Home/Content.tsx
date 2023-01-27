@@ -1,6 +1,18 @@
 import React from "react";
 
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
+
+const buttonDefaultStyle = {
+  color: "white",
+  display: "block",
+  fontSize: "14px",
+  fontWeight: 700,
+  textTransform: "capitalize",
+  fontFamily: "Inter",
+  minWidth: "90px",
+  border: "2px solid #6f5bde",
+  borderRadius: "25px",
+};
 
 export default function Content() {
   return (
@@ -26,6 +38,7 @@ export default function Content() {
           sx={{
             fontWeight: "bold",
             fontSize: "1rem",
+            fontFamily: "Inter",
           }}
         >
           PRESALE IS LIVE
@@ -37,15 +50,46 @@ export default function Content() {
             marginTop: "10px",
             marginBottom: "10px",
             whiteSpace: "wrap",
+            fontFamily: "Inter",
           }}
         >
           Lörem ipsum antiheten nyning
         </Typography>
-        <Typography>
+        <Typography
+          sx={{
+            fontFamily: "Inter",
+          }}
+        >
           Lörem ipsum aveck gigan eller esat. Farat bifar nusår hexalililiga. Ovivaligt ultrar
           fixie. Kyrktrappsbröllop mansplaining nöbigen. Mavis dogmafilm orat hemin. Deform
           krisväska. Parov.
         </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            gap: "20px",
+            marginTop: "40px",
+          }}
+        >
+          <Button
+            sx={{
+              ...buttonDefaultStyle,
+              minWidth: "172px",
+              color: "#6f5bde",
+            }}
+          >
+            Whitepaper &gt;
+          </Button>
+          <Button
+            sx={{
+              ...buttonDefaultStyle,
+              minWidth: "111px",
+              backgroundColor: "#6f5bde",
+            }}
+          >
+            FAQ &gt;
+          </Button>
+        </Box>
       </Box>
     </Container>
   );

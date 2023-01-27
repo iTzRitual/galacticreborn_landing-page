@@ -4,7 +4,7 @@
 
 .app-image-background-home {
   background-image: linear-gradient(270deg, #171717 0%, rgba(23, 23, 23, 0) 72.11%),
-    url("background_home.png");
+    linear-gradient(360deg, #171717 0%, rgba(23, 23, 23, 0) 22.11%), url("background_home.png");
   background-size: cover;
   background-position: center;
 }

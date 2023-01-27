@@ -4,8 +4,21 @@ import { ButtonGroup, IconButton } from "@mui/material";
 
 export default function Socials() {
   return (
-    <ButtonGroup>
-      <IconButton href="https://medium.com/">
+    <ButtonGroup
+      sx={{
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gridTemplateRows: "1fr 1fr",
+        marginLeft: "30px",
+      }}
+    >
+      <IconButton
+        href="https://medium.com/"
+        sx={{
+          margin: 0,
+          padding: "10px",
+        }}
+      >
         <img src="medium.svg" alt="medium" />
       </IconButton>
       <IconButton href="https://discord.gg/">
@@ -20,30 +33,3 @@ export default function Socials() {
     </ButtonGroup>
   );
 }
-
-// <Box
-// sx={{
-//   display: { xs: "none", md: "flex" },
-//   gap: "15px",
-//   flexDirection: "column",
-//   margin: "13px 0 13px 0",
-// }}
-// >
-// <Box sx={{ display: { xs: "none", md: "flex" }, columnGap: "20px" }}>
-//   <a href="https://medium.com/">
-//     <img src="medium.svg" alt="medium" />
-//   </a>
-//   <a href="https://discord.gg/">
-//     <img src="discord.svg" alt="discord" />
-//   </a>
-// </Box>
-// <Box sx={{ display: { xs: "none", md: "flex" }, columnGap: "20px" }}>
-//   <a href="https://twitter.com/">
-//     <img src="twitter.svg" alt="twitter" />
-//   </a>
-
-//   <a href="https://t.me/">
-//     <img src="telegram.svg" alt="telegram" />
-//   </a>
-// </Box>
-// </Box>

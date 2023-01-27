@@ -13,6 +13,7 @@ const buttonDefaultStyle = {
   color: "white",
   display: "block",
   fontSize: "14px",
+  fontFamily: "Inter",
   fontWeight: 700,
   textTransform: "capitalize",
   minWidth: "90px",
@@ -23,10 +24,15 @@ function Navbar() {
 
   const handleButtonClick = (page: string) => {
     setIsPageActive(page);
+    // scroll to section
+    const element = document.getElementById(page.toLowerCase());
+    if (element) {
+      element.scrollIntoView();
+    }
   };
 
   return (
-    <Container maxWidth="xl" className="app-navbar-container ">
+    <Container maxWidth="xl" className="app-navbar-container">
       <Toolbar disableGutters>
         <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, columnGap: "2%" }}>
           {pages.map((page) => (
@@ -35,6 +41,7 @@ function Navbar() {
               onClick={() => handleButtonClick(page)}
               sx={{
                 ...buttonDefaultStyle,
+                borderBottom: "2px solid transparent",
               }}
               className={isPageActive === page ? "active" : ""}
             >
