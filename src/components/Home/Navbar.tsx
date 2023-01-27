@@ -26,9 +26,16 @@ function Navbar() {
   };
 
   return (
-    <Container maxWidth="xl" className="app-navbar-container ">
+    <Container maxWidth={false} className="app-navbar-container " sx={{ gridArea: "nav" }}>
       <Toolbar disableGutters>
-        <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, columnGap: "2%" }}>
+        <Box
+          sx={{
+            flexGrow: 1,
+            display: { xs: "none", md: "flex" },
+            columnGap: "2%",
+            justifyContent: "end",
+          }}
+        >
           {pages.map((page) => (
             <Button
               key={page}

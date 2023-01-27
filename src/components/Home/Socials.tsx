@@ -1,12 +1,23 @@
 import React from "react";
 
-import Box from "@mui/material/Box";
 import { ButtonGroup, IconButton } from "@mui/material";
 
 export default function Socials() {
   return (
-    <ButtonGroup>
-      <IconButton href="https://medium.com/">
+    <ButtonGroup
+      sx={{
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gridTemplateRows: "1fr 1fr",
+      }}
+    >
+      <IconButton
+        sx={{
+          margin: 0,
+          padding: "10px",
+        }}
+        href="https://medium.com/"
+      >
         <img src="medium.svg" alt="medium" />
       </IconButton>
       <IconButton href="https://discord.gg/">

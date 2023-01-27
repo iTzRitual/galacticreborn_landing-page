@@ -8,17 +8,17 @@ import Content from "./Content";
 export default function Home() {
   return (
     <Background>
+      <Navbar />
       <BackgroundImage className="app-image-background-home" />
       <Container
         sx={{
           height: "100vh",
           display: "flex",
-          background: "#171717",
           marginLeft: "-1px",
           flexDirection: "column",
+          gridArea: "right",
         }}
       >
-        <Navbar />
         <Content />
       </Container>
     </Background>

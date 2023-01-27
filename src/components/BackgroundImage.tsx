@@ -11,6 +11,7 @@ function BackgroundImage({ className }: BackgroundImageProps) {
       sx={{
         height: "100vh",
         display: "flex",
+        gridArea: "left",
       }}
       className={className}
     />
