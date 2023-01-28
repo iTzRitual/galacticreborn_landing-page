@@ -1,6 +1,12 @@
 @import "./home";
 @import "./navbar";
 @import "./about";
+@import "./roadmap";
+
+@font-face {
+  font-family: 'Space';
+  src:  url('src/fonts/SPACE.ttf') format('truetype');
+}
 
 body {
   margin: 0;
@@ -8,6 +14,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 $enable-ltr: true;

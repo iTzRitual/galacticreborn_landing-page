@@ -1,20 +1,31 @@
 import { Container } from "@mui/material";
 import React from "react";
 
-// This is a component that takes in children and renders them in a container
+interface BackgroundProps {
+  children: React.ReactNode;
+  className?: string;
+  height?: string;
+}
 
-export default function Background({ children }: { children: React.ReactNode }) {
+function Background({ children, height, className }: BackgroundProps) {
   return (
     <Container
       sx={{
-        height: "100vh",
+        height,
         display: "flex",
         padding: "0 !important",
         maxWidth: "none !important",
       }}
-      className="app-background"
+      className={className}
     >
       {children}
     </Container>
   );
 }
+
+Background.defaultProps = {
+  height: "100vh",
+  className: "app-background",
+};
+
+export default Background;

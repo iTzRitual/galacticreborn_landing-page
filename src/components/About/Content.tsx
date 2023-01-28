@@ -1,7 +1,24 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 
+const textMobileStyle = {
+  color: "white",
+  marginTop: "15px",
+  maxWidth: "375px",
+  fontSize: "16px",
+  padding: "0 15px",
+};
+
+const textDesktopStyle = {
+  color: "white",
+  marginTop: "15px",
+  maxWidth: "723px",
+  fontSize: "20px",
+};
+
 function Content() {
+  const isMobile = useMediaQuery("(max-width: 600px)");
+
   return (
     <Box
       sx={{
@@ -9,26 +26,18 @@ function Content() {
       }}
     >
       <Typography
-        variant="h3"
+        variant={isMobile ? "h4" : "h3"}
         sx={{ color: "white", fontWeight: "bold", marginTop: "81px", fontFamily: "inherit" }}
       >
         UNIVERSE
       </Typography>
-      <Typography variant="h3" sx={{ color: "white", fontWeight: "bold", fontFamily: "inherit" }}>
+      <Typography
+        variant={isMobile ? "h4" : "h3"}
+        sx={{ color: "white", fontWeight: "bold", fontFamily: "inherit" }}
+      >
         IN YOUR HANDS
       </Typography>
-      <Typography
-        sx={{
-          color: "white",
-          marginTop: "15px",
-          maxWidth: "723px",
-          maxHeight: "650px",
-          fontSize: "24px",
-          overflow: "hidden",
-          textOverflow: "ellipsis",
-        }}
-        paragraph
-      >
+      <Typography sx={isMobile ? textMobileStyle : textDesktopStyle} paragraph>
         Lörem ipsum dögt antityns: för bäkur i sav klustersmitta nesor ovissa fast tihet. Teration
         asat prerade i bens. Preck infrade vins antepisa jöv om autov, suprall. Megad hör prelerat
         och stenomast bäns stöddjur i krohor makrolig lere. Dere håtrelig om revisok dor mms:a
@@ -38,9 +47,6 @@ function Content() {
         fatänt jöhången aver men kav förutom dism heterorirade hönas. Fening speliga, bänera visk
         or, förutom made fapyn spetspatient lasodurtad om än dolig nidade tetrafäras såsom prenyn
         att dododa tills plaviledes i telent bin. Sms-livräddare stereoaktiv nenar kun då did
-        heteroling vigån i sov paltkoma euroskade trehovining diktig inte postsofi. Nilingar
-        antropograf och ongen i tins, plus din alltså solig ifall dyspol sedan mikront i killgissa,
-        låvis telematisk, jöforen tetraska är tranade, till kronis vagon till vanade. Ask
         gigekonomi.
       </Typography>
     </Box>

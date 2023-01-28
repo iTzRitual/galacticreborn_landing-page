@@ -1,8 +1,16 @@
 .app-image-background-about {
   background-image: linear-gradient(90deg, #171717 0%, rgba(23, 23, 23, 0) 72.11%),
-    linear-gradient(180deg, #171717 1%, rgba(23, 23, 23, 0) 25.11%), 
-    linear-gradient(360deg, #171717 1%, rgba(23, 23, 23, 0) 25.11%), 
-    url("background_about.png");
+    linear-gradient(180deg, #171717 1%, rgba(23, 23, 23, 0) 25.11%),
+    linear-gradient(360deg, #171717 1%, rgba(23, 23, 23, 0) 25.11%), url("background_about.svg");
   background-size: cover;
   background-position: center;
+}
+
+.app-mobile-background-about {
+  background-color: #171717;
+  background-image: linear-gradient(180deg, #171717 0%, rgba(23, 23, 23, 0) 82.11%),
+    linear-gradient(360deg, #171717 0%, rgba(23, 23, 23, 0) 82.11%), url("background_about.svg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  min-width: 375px;
 }

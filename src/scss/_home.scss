@@ -8,3 +8,12 @@
   background-size: cover;
   background-position: center;
 }
+
+.app-mobile-background-home {
+  background-color: #171717;
+  background-image: linear-gradient(180deg, #171717 0%, rgba(23, 23, 23, 0) 82.11%),
+    linear-gradient(360deg, #171717 0%, rgba(23, 23, 23, 0) 85.11%), url("background_home.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  min-width: 375px;
+}

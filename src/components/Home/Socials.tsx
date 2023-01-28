@@ -1,17 +1,22 @@
 import React from "react";
 
-import { ButtonGroup, IconButton } from "@mui/material";
+import { ButtonGroup, IconButton, useMediaQuery } from "@mui/material";
+
+const socialsMobile = {
+  display: "flex",
+};
+
+const socialsDesktop = {
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
+  gridTemplateRows: "1fr 1fr",
+  marginLeft: "30px",
+};
 
 export default function Socials() {
+  const isMobile = useMediaQuery("(max-width: 600px)");
   return (
-    <ButtonGroup
-      sx={{
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gridTemplateRows: "1fr 1fr",
-        marginLeft: "30px",
-      }}
-    >
+    <ButtonGroup sx={isMobile ? socialsMobile : socialsDesktop}>
       <IconButton
         href="https://medium.com/"
         sx={{
