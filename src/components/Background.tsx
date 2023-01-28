@@ -8,10 +8,7 @@ export default function Background({ children }: { children: React.ReactNode }) 
     <Container
       sx={{
         height: "100vh",
-        display: "grid",
-        gridTemplateAreas: `"nav nav"
-        "left right"`,
-        gridTemplateColumns: "1fr 1fr",
+        display: "flex",
         padding: "0 !important",
         maxWidth: "none !important",
       }}
