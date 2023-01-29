@@ -2,10 +2,12 @@
 @import "./navbar";
 @import "./about";
 @import "./roadmap";
+@import "./team";
+@import "./community";
 
 @font-face {
-  font-family: 'Space';
-  src:  url('src/fonts/SPACE.ttf') format('truetype');
+  font-family: "Space";
+  src: url("src/fonts/SPACE.ttf") format("truetype");
 }
 
 body {

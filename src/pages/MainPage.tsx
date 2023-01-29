@@ -3,6 +3,10 @@ import { Container } from "@mui/material";
 import Home from "../components/Home/Home";
 import About from "../components/About/About";
 import Roadmap from "../components/Roadmap/Roadmap";
+import Team from "../components/Team/Team";
+import FAQ from "../components/FAQ/FAQ";
+import Community from "../components/Community/Community";
+import StickyButton from "../components/StickyButton";
 
 export default function MainPage() {
   return (
@@ -19,6 +23,10 @@ export default function MainPage() {
       <Home />
       <About />
       <Roadmap />
+      <Team />
+      <FAQ />
+      <Community />
+      <StickyButton />
     </Container>
   );
 }

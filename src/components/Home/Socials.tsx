@@ -26,13 +26,13 @@ export default function Socials() {
       >
         <img src="medium.svg" alt="medium" />
       </IconButton>
-      <IconButton href="https://discord.gg/">
+      <IconButton href="https://discord.com/invite/CQqm2D8J3U">
         <img src="discord.svg" alt="discord" />
       </IconButton>
-      <IconButton href="https://twitter.com/">
+      <IconButton href="https://twitter.com/GalacticReborn">
         <img src="twitter.svg" alt="twitter" />
       </IconButton>
-      <IconButton href="https://t.me/">
+      <IconButton href="https://t.me/galactic_reborn_offical_chat">
         <img src="telegram.svg" alt="telegram" />
       </IconButton>
     </ButtonGroup>

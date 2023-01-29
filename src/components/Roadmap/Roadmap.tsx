@@ -26,6 +26,7 @@ const stages = {
     description: "Beta Release and Additional Features",
     points: [
       "Implementation of additional in-game items and ships",
+      "Staking and liquidity providing incentives",
       "Development of alliance systems",
       "Release of beta version for further testing and feedback",
       "Implementation of additional gameplay features, such as transportation, exploration",
@@ -71,7 +72,7 @@ export default function Roadmap() {
           alignItems: "center",
           position: "relative",
           color: "white",
-          paddingBottom: "100px !important",
+          paddingBottom: "300px !important",
         }}
       >
         <Box
