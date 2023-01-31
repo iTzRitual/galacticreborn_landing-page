@@ -1,5 +1,23 @@
 @import "./home";
 @import "./navbar";
+@import "./about";
+@import "./roadmap";
+@import "./team";
+@import "./community";
+
+@font-face {
+  font-family: "Space";
+  src: url("src/fonts/SPACE.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 $enable-ltr: true;
 $enable-rtl: true;
