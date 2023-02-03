@@ -2,18 +2,46 @@
   background-color: #171717;
 }
 
-.app-image-background-home {
-  background-image: linear-gradient(270deg, #171717 0%, rgba(23, 23, 23, 0) 72.11%),
-    linear-gradient(360deg, #171717 0%, rgba(23, 23, 23, 0) 22.11%), url("background_home.png");
-  background-size: cover;
-  background-position: center;
+.app-image-background-home__grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-image: linear-gradient(270deg, #171717 40%, rgba(23, 23, 23, 0) 75%);
+  background-size: auto 100%,;
+  background-position: left;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
-.app-mobile-background-home {
-  background-color: #171717;
-  background-image: linear-gradient(180deg, #171717 0%, rgba(23, 23, 23, 0) 82.11%),
-    linear-gradient(360deg, #171717 0%, rgba(23, 23, 23, 0) 85.11%), url("background_home.png");
-  background-position: bottom;
-  background-repeat: no-repeat;
-  min-width: 375px;
+.app-image-background-home__child {
+  background-image: linear-gradient(0deg, #171717 0%, rgba(23, 23, 23, 0) 15%), url("background_home.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 50%;
+  max-width: 70%;
+  height: 100%;
+  background-size: cover;
+  background-position: left center;
+  z-index: -1;
+}
+
+.scroll-down__button {
+  position: absolute !important;
+  bottom: 60px;
+  right: 160px;
+}
+.scroll-down__button {
+  span {
+    font-weight: 700;
+    font-size: 16px;
+    color: #C0C0C0;;
+  }
+}
+.purple-icon__button {
+  svg {
+    path {
+      stroke: #6F5BDE;
+    }
+  }
 }

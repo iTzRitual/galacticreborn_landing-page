@@ -4,6 +4,8 @@ import Background from "../Background";
 import BackgroundImage from "../BackgroundImage";
 import Navbar from "./Navbar";
 import Content from "./Content";
+import ScrollDownButton from "./ScrollDownButton";
+
 
 export default function Home() {
   const isMobile = useMediaQuery("(max-width: 600px)");
@@ -24,20 +26,21 @@ export default function Home() {
           </Container>
         </Background>
       ) : (
-        <Background>
+        <Background className="app-image-background-home__grid">
+          <Navbar />
           <BackgroundImage className="app-image-background-home" />
           <Container
             sx={{
               height: "100vh !important",
               display: "flex",
-              background: "#171717",
               marginLeft: "-1px",
               flexDirection: "column",
             }}
           >
-            <Navbar />
             <Content />
           </Container>
+          <Container className="app-image-background-home__child" />
+          <ScrollDownButton scrollTo={"about"}/>
         </Background>
       )}
     </div>

@@ -2,17 +2,20 @@ import React from "react";
 
 import { Box, Button, Container, Typography, useMediaQuery } from "@mui/material";
 import ContentMobile from "./ContentMobile";
+import ArrowImg from "../../assets/arrow-short";
 
 const buttonDefaultStyle = {
   color: "white",
-  display: "block",
+  display: "flex",
   fontSize: "14px",
   fontWeight: 700,
   textTransform: "capitalize",
   fontFamily: "Inter",
-  minWidth: "90px",
   border: "2px solid #6f5bde",
   borderRadius: "25px",
+  columnGap: "10px",
+  paddingLeft: "25px",
+  paddingRight: "15px"
 };
 
 export default function Content() {
@@ -65,6 +68,7 @@ export default function Content() {
             <Typography
               sx={{
                 fontFamily: "Inter",
+                color: "#C0C0C0;"
               }}
             >
               Lörem ipsum aveck gigan eller esat. Farat bifar nusår hexalililiga. Ovivaligt ultrar
@@ -85,7 +89,8 @@ export default function Content() {
                   color: "#6f5bde",
                 }}
               >
-                Whitepaper &gt;
+                Whitepaper 
+                <ArrowImg direction={0} color="#6F5BDE"></ArrowImg>
               </Button>
               <Button
                 sx={{
@@ -94,7 +99,8 @@ export default function Content() {
                   backgroundColor: "#6f5bde",
                 }}
               >
-                FAQ &gt;
+                FAQ 
+                <ArrowImg direction={0} color="#FFF"></ArrowImg>
               </Button>
             </Box>
           </Box>

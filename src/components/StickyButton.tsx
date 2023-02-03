@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
+import arrowImg from "../assets/go_to_top.svg";
 
 function StickyButton() {
   const [showButton, setShowButton] = useState(false);
@@ -40,9 +41,11 @@ function StickyButton() {
           color: "white",
           border: "2px solid #6F5BDE",
           textTransform: "none",
+          height: "64px",
+          width: "64px"
         }}
       >
-        Scroll To Top
+        <img src={arrowImg} alt="Scroll to top"></img>
       </Button>
     </div>
   );

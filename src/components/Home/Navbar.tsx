@@ -7,6 +7,6 @@ import MobileNavbar from "./MobileNavbar";
 function Navbar() {
   const isMobile = useMediaQuery("(max-width: 600px)");
 
-  return <div>{isMobile ? <MobileNavbar /> : <DesktopNavbar />}</div>;
+  return isMobile ? <MobileNavbar /> : <DesktopNavbar />;
 }
 export default Navbar;
