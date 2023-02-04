@@ -39,7 +39,7 @@ const teamMembers = [
 
 function Team() {
   return (
-    <Background height="fit-content">
+    <Background className="app-image-background-team">
       <Container
         id="about us"
         maxWidth="xl"
@@ -52,7 +52,7 @@ function Team() {
           paddingBottom: "50px !important",
         }}
       >
-        <Typography fontSize="2.5rem" fontFamily="Space">
+        <Typography fontSize="3rem" fontFamily="Space">
           Team
         </Typography>
         <Box
@@ -61,7 +61,7 @@ function Team() {
             marginTop: "30px",
           }}
         >
-          <Typography fontSize="24px" fontFamily="Inter" overflow="hidden">
+          <Typography fontSize="24px" fontFamily="Inter" overflow="hidden" color="#C0C0C0">
             Lörem ipsum nynisa tenera, mikronde, i tynde, i kisk, kara geonerat med semiseng, är
             vijigt. Transitflykting olingar en krogänat supradegon, astrosat, teranat polyren min.
             Vinterkräksjuka tempomatisk soheten. Kontrangar jitång, det vill säga anera visenade i

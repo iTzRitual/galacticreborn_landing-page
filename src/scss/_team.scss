@@ -1,13 +1,15 @@
 .app-image-background-team {
-  background-image: radial-gradient(
-      60.93% 60.93% at 60% 50.04%,
-      rgba(23, 23, 23, 0) 0%,
-      #171717 79.66%
-    ),
-    url("background_team.svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  // background-image: radial-gradient(
+  //     60.93% 60.93% at 60% 50.04%,
+  //     rgba(23, 23, 23, 0) 0%,
+  //     #171717 79.66%
+  //   ),
+  //   url("background_team.svg");
+  // background-size: cover;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  min-height: 100vh;
+  background-color: #171717;
 }
 
 .app-team-member-avatar {
