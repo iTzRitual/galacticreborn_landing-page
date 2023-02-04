@@ -94,6 +94,7 @@ export default function Roadmap() {
         ))}
         {isMobile || (
           <Box
+            className="roadmap__progressbar"
             sx={{
               position: "absolute",
               top: "13%",

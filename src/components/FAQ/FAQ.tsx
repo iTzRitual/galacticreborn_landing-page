@@ -4,6 +4,7 @@ import { Box, Button, Container, Typography } from "@mui/material";
 import Background from "../Background";
 import faqImage from "../../assets/faq.svg";
 import contactEmail from "../../assets/contact.png";
+import ArrowImg from "../../assets/arrow-short";
 
 function FAQ() {
   return (
@@ -38,28 +39,50 @@ function FAQ() {
               justifyContent: "center",
               alignItems: "start",
               padding: "50px",
+              gap: "20px",
             }}
           >
-            <Typography fontSize="2.5rem" fontFamily="Space">
-              FAQ’s
-            </Typography>
-            <Typography fontSize="16px" fontFamily="Inter">
-              Lörem ipsum nynisa tenera, mikronde, i tynde, i kisk, kara geonerat med semiseng, är
-            </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "start",
+                gap: 0,
+              }}
+            >
+              <Typography fontSize="64px" fontFamily="Space">
+                FAQ
+                <Typography component="span" fontSize="64px" fontFamily="Inter">
+                  ’
+                </Typography>
+                <Typography component="span" fontSize="40px" fontFamily="Space">
+                  s
+                </Typography>
+              </Typography>
+              <Typography fontSize="16px" fontFamily="Inter" color="#C0C0C0">
+                Lörem ipsum nynisa tenera, mikronde, i tynde, i kisk, kara geonerat med semiseng, är
+              </Typography>
+            </Box>
             <Button
               sx={{
-                marginTop: "20px",
-                backgroundColor: "#6F5BDE",
-                borderRadius: "20px",
                 color: "white",
+                display: "flex",
+                fontSize: "14px",
+                fontWeight: 700,
+                textTransform: "capitalize",
                 fontFamily: "Inter",
-                fontWeight: "700",
-                fontSize: "16px",
-                width: "180px",
-                textTransform: "none",
+                border: "2px solid #6f5bde",
+                borderRadius: "25px",
+                columnGap: "10px",
+                paddingLeft: "25px",
+                paddingRight: "15px",
+                minWidth: "111px",
+                backgroundColor: "#6f5bde",
               }}
             >
               View all FAQ’s
+              <ArrowImg direction={0} color="#FFF" />
             </Button>
           </Box>
         </Box>
@@ -75,7 +98,7 @@ function FAQ() {
           <Typography fontSize="96px" fontFamily="Inter" fontWeight="700">
             Get in touch
           </Typography>
-          <img src={contactEmail} alt="contact" style={{ marginTop: "10px" }} />
+          <img src={contactEmail} alt="contact" style={{ marginTop: "-50px" }} />
         </Box>
       </Container>
     </Background>

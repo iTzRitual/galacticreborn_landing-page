@@ -15,7 +15,7 @@ const buttonDefaultStyle = {
   borderRadius: "25px",
   columnGap: "10px",
   paddingLeft: "25px",
-  paddingRight: "15px"
+  paddingRight: "15px",
 };
 
 export default function Content() {
@@ -68,7 +68,7 @@ export default function Content() {
             <Typography
               sx={{
                 fontFamily: "Inter",
-                color: "#C0C0C0;"
+                color: "#C0C0C0;",
               }}
             >
               Lörem ipsum aveck gigan eller esat. Farat bifar nusår hexalililiga. Ovivaligt ultrar
@@ -89,8 +89,8 @@ export default function Content() {
                   color: "#6f5bde",
                 }}
               >
-                Whitepaper 
-                <ArrowImg direction={0} color="#6F5BDE"></ArrowImg>
+                Whitepaper
+                <ArrowImg direction={0} color="#6F5BDE" />
               </Button>
               <Button
                 sx={{
@@ -99,8 +99,8 @@ export default function Content() {
                   backgroundColor: "#6f5bde",
                 }}
               >
-                FAQ 
-                <ArrowImg direction={0} color="#FFF"></ArrowImg>
+                FAQ
+                <ArrowImg direction={0} color="#FFF" />
               </Button>
             </Box>
           </Box>

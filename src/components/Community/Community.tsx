@@ -74,6 +74,20 @@ function Community() {
           </Button>
         </Box>
       </Container>
+      <Container
+        maxWidth={false}
+        sx={{
+          position: "absolute",
+          bottom: 0,
+          display: "block",
+          textAlign: "center",
+          padding: "50px 0 10px 0",
+          background: "linear-gradient(0deg, #171717 40%, rgba(23, 23, 23, 0.3) 100%)",
+          color: "#FFF",
+        }}
+      >
+        <Typography fontFamily="space">Galactic Reborn 2023</Typography>
+      </Container>
     </Background>
   );
 }

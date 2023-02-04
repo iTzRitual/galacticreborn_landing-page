@@ -17,8 +17,7 @@ const buttonDefaultStyle = {
 };
 
 function DesktopNavbar() {
-  const [isPageActive, setIsPageActive] = React.useState<string>("Home");
-
+  const [isPageActive] = React.useState<string>("Home");
   const handleButtonClick = (page: string) => {
     // scroll to section
     const element = document.getElementById(page.toLowerCase());
@@ -27,11 +26,23 @@ function DesktopNavbar() {
     }
   };
   return (
-    <Container maxWidth={false} className="app-navbar-container" sx={{paddingLeft:"40px!important", paddingRight:"40px!important"}}>
+    <Container
+      maxWidth={false}
+      className="app-navbar-container"
+      sx={{ paddingLeft: "40px!important", paddingRight: "40px!important" }}
+    >
       <Toolbar disableGutters>
         <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
-          <img src={grLogo}></img>
-          <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "end", alignItems: "center", columnGap: "30px" }}>
+          <img src={grLogo} alt="galactic reborn" />
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: "flex",
+              justifyContent: "end",
+              alignItems: "center",
+              columnGap: "30px",
+            }}
+          >
             {pages.map((page) => (
               <Button
                 key={page}

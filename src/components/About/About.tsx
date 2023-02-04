@@ -3,6 +3,7 @@ import { Container, useMediaQuery } from "@mui/material";
 import Background from "../Background";
 import BackgroundImage from "../BackgroundImage";
 import Content from "./Content";
+import ScrollDownButton from "../ScrollDownButton";
 
 export default function About() {
   const isMobile = useMediaQuery("(max-width: 600px)");
@@ -23,12 +24,12 @@ export default function About() {
           </Container>
         </Background>
       ) : (
-        <Background height="fit-content">
+        <Background height="fit-content" className="app-image-background-about">
           <Container
             id="about"
             sx={{
               display: "flex",
-              background: "#171717",
+              justifyContent: "center",
               marginRight: "-1px",
               flexDirection: "column",
               marginLeft: "40px",
@@ -36,7 +37,9 @@ export default function About() {
           >
             <Content />
           </Container>
-          <BackgroundImage className="app-image-background-about" />
+          <BackgroundImage />
+          <Container className="app-image-background-about__child" />
+          <ScrollDownButton scrollTo="roadmap" />
         </Background>
       )}
     </div>

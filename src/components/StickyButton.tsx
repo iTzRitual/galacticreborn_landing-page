@@ -42,10 +42,10 @@ function StickyButton() {
           border: "2px solid #6F5BDE",
           textTransform: "none",
           height: "64px",
-          width: "64px"
+          width: "64px",
         }}
       >
-        <img src={arrowImg} alt="Scroll to top"></img>
+        <img src={arrowImg} alt="Scroll to top" />
       </Button>
     </div>
   );

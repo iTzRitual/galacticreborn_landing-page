@@ -10,7 +10,7 @@ const socialsDesktop = {
   display: "grid",
   gridTemplateColumns: "1fr 1fr",
   gridTemplateRows: "1fr 1fr",
-  marginLeft: "20px"
+  marginLeft: "20px",
 };
 
 export default function Socials() {
@@ -21,7 +21,7 @@ export default function Socials() {
         href="https://medium.com/"
         sx={{
           width: "46px",
-          height: "46px"
+          height: "46px",
         }}
       >
         <img src="medium.svg" alt="medium" />
