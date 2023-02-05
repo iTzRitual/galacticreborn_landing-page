@@ -20,5 +20,9 @@ html {
   overflow-x: hidden;
 }
 
+#app-container.mobileMenuOpen {
+  transform: translateX(100vw);
+}
+
 $enable-ltr: true;
 $enable-rtl: true;

@@ -2,6 +2,8 @@ import { Box, Button, Container, Toolbar } from "@mui/material";
 import React from "react";
 import Socials from "./Socials";
 import grLogo from "../../assets/galactic_reborn_logo.png";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const pages = ["Home", "About", "Roadmap", "About us", "FAQ"];
 
@@ -17,6 +19,7 @@ const buttonDefaultStyle = {
 };
 
 function DesktopNavbar() {
+  const theme = useTheme();
   const [isPageActive] = React.useState<string>("Home");
   const handleButtonClick = (page: string) => {
     // scroll to section
@@ -33,7 +36,7 @@ function DesktopNavbar() {
     >
       <Toolbar disableGutters>
         <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
-          <img src={grLogo} alt="galactic reborn" />
+          {useMediaQuery(theme.breakpoints.up(1169)) && <img src={grLogo} alt="galactic reborn" />}
           <Box
             sx={{
               flexGrow: 1,
@@ -41,6 +44,9 @@ function DesktopNavbar() {
               justifyContent: "end",
               alignItems: "center",
               columnGap: "30px",
+              [theme.breakpoints.down(1300)]: {
+                columnGap: "10px",
+              },
             }}
           >
             {pages.map((page) => (

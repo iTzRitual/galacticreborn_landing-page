@@ -1,8 +1,8 @@
 import React from "react";
-
 import { Box, Button, Container, Typography, useMediaQuery } from "@mui/material";
 import ContentMobile from "./ContentMobile";
 import ArrowImg from "../../assets/arrow-short";
+import { useTheme } from "@mui/material/styles";
 
 const buttonDefaultStyle = {
   color: "white",
@@ -19,6 +19,7 @@ const buttonDefaultStyle = {
 };
 
 export default function Content() {
+  const theme = useTheme();
   const isMobile = useMediaQuery("(max-width: 600px)");
   return (
     <div>
@@ -41,9 +42,29 @@ export default function Content() {
               color: "white",
               marginLeft: "100px",
               maxWidth: "550px",
+              [theme.breakpoints.down(1168)]: {
+                marginLeft: "auto",
+                marginRight: "auto",
+                width: "800px",
+                maxWidth: "100%",
+                textAlign: "center",
+              },
               lineHeight: "1",
             }}
           >
+            {useMediaQuery(theme.breakpoints.down(1168)) && (
+              <Typography
+                sx={{
+                  fontSize: "48px",
+                  fontFamily: "Space",
+                  lineHeight: 1,
+                  textAlign: "center",
+                  marginBottom: "40px",
+                }}
+              >
+                Galactic <br /> Reborn
+              </Typography>
+            )}
             <Typography
               sx={{
                 fontWeight: "bold",
@@ -57,6 +78,7 @@ export default function Content() {
               sx={{
                 fontWeight: "bold",
                 fontSize: "3rem",
+                lineHeight: "3rem",
                 marginTop: "10px",
                 marginBottom: "10px",
                 whiteSpace: "wrap",
@@ -80,6 +102,13 @@ export default function Content() {
                 display: "flex",
                 gap: "20px",
                 marginTop: "40px",
+                [theme.breakpoints.down(1168)]: {
+                  flexDirection: "column",
+                  width: "200px",
+                  gap: "15px",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                },
               }}
             >
               <Button

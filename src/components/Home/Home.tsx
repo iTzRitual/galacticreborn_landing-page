@@ -5,8 +5,10 @@ import BackgroundImage from "../BackgroundImage";
 import Navbar from "./Navbar";
 import Content from "./Content";
 import ScrollDownButton from "../ScrollDownButton";
+import { useTheme } from "@mui/material/styles";
 
 export default function Home() {
+  const theme = useTheme();
   const isMobile = useMediaQuery("(max-width: 600px)");
   return (
     <div>
@@ -34,11 +36,15 @@ export default function Home() {
               display: "flex",
               marginLeft: "-1px",
               flexDirection: "column",
+              [theme.breakpoints.down(1168)]: {
+                width: "100%",
+                maxWidth: "none",
+              },
             }}
           >
             <Content />
           </Container>
-          <Container className="app-image-background-home__child" />
+          <Container maxWidth={false} className="app-image-background-home__child" />
           <ScrollDownButton scrollTo="about" />
         </Background>
       )}

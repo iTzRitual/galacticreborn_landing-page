@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "@mui/material";
+import MobileMenu from "../components/MobileMenu/MobileMenu";
 import Home from "../components/Home/Home";
 import About from "../components/About/About";
 import Roadmap from "../components/Roadmap/Roadmap";
@@ -7,10 +8,14 @@ import Team from "../components/Team/Team";
 import FAQ from "../components/FAQ/FAQ";
 import Community from "../components/Community/Community";
 import StickyButton from "../components/StickyButton";
+import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 export default function MainPage() {
+  const theme = useTheme();
   return (
     <Container
+      id="app-container"
       maxWidth={false}
       sx={{
         padding: "0 !important",
@@ -18,8 +23,13 @@ export default function MainPage() {
         display: "flex",
         flexDirection: "column",
         minWidth: "100vw",
+        [theme.breakpoints.down(900)]: {
+          transition: ".3s",
+          transform: "translateX(0)",
+        },
       }}
     >
+      {useMediaQuery(theme.breakpoints.down(900)) && <MobileMenu />}
       <Home />
       <About />
       <Roadmap />

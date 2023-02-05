@@ -7,7 +7,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   background-image: linear-gradient(270deg, #171717 40%, rgba(23, 23, 23, 0) 75%);
-  background-size: auto 100%,;
+  background-size: auto 100%;
   background-position: left;
   background-repeat: no-repeat;
   position: relative;
@@ -43,5 +43,30 @@
     path {
       stroke: #6F5BDE;
     }
+  }
+}
+
+@media (max-width: 1168px) {
+  .app-image-background-home {
+    display: none !important;
+  }
+  .app-image-background-home__grid {
+    background-image: none;
+  }
+  .app-image-background-home__child {
+    max-width: 100%;
+    width: 100%;
+  }
+  .app-image-background-home__child {
+    background-image: linear-gradient(0deg, #171717 0%, rgba(23, 23, 23, 0.4) 50%), linear-gradient(270deg, #171717 0%, rgba(23, 23, 23, 0.4) 50%), url("background_home.png");
+  }
+  .app-image-background-home__grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 900px) {
+  .app-image-background-home__grid {
+    display: flex !important;
+    flex-direction: column;
   }
 }

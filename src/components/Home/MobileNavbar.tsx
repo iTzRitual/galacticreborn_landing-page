@@ -1,81 +1,28 @@
-import { Tooltip, Box, IconButton, MenuItem, Typography, Menu, Button } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { Box, Button } from "@mui/material";
 import React from "react";
 import Socials from "./Socials";
-
-const pages = ["Home", "About", "Roadmap", "About us", "FAQ"];
+import MenuIcon from "../../assets/menu_icon.svg";
 
 function MobileNavbar() {
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
-
-  const handleButtonClick = (page: string) => {
-    // scroll to section
-    const element = document.getElementById(page.toLowerCase());
-    if (element) {
-      element.scrollIntoView();
+  const handleMenuClick = () => {
+    const pageBody = document.getElementById("app-container");
+    if (pageBody) {
+      pageBody.classList.add("mobileMenuOpen");
     }
-  };
-
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
-  const handleCloseUserMenu = (page: string) => {
-    setAnchorElUser(null);
-    handleButtonClick(page);
   };
   return (
     <Box
       sx={{
         color: "white",
-        marginTop: "20px",
-        marginLeft: "20px",
+        margin: "20px 25px 0 10px",
         display: "flex",
-        justifyContent: "end",
+        justifyContent: "space-between",
       }}
     >
-      <Socials />
-      <Button
-        sx={{
-          color: "#6f5bde",
-          width: "139px",
-          marginLeft: "20px",
-          fontFamily: "Inter",
-          fontWeight: 700,
-          marginRight: "20px",
-        }}
-        className="app-get-started-button"
-      >
-        Get Started
+      <Button onClick={handleMenuClick}>
+        <img src={MenuIcon} />
       </Button>
-      <Tooltip title="Open menu">
-        <IconButton onClick={handleOpenUserMenu} color="inherit">
-          <MenuIcon />
-        </IconButton>
-      </Tooltip>
-      <Menu
-        sx={{ mt: "45px" }}
-        id="menu-appbar"
-        anchorEl={anchorElUser}
-        anchorOrigin={{
-          vertical: "top",
-          horizontal: "right",
-        }}
-        keepMounted
-        transformOrigin={{
-          vertical: "top",
-          horizontal: "right",
-        }}
-        open={Boolean(anchorElUser)}
-        onClose={handleCloseUserMenu}
-      >
-        {pages.map((page) => (
-          <MenuItem key={page} onClick={() => handleCloseUserMenu(page)}>
-            <Typography textAlign="center" fontFamily="Inter" fontWeight="700">
-              {page}
-            </Typography>
-          </MenuItem>
-        ))}
-      </Menu>
+      <Socials />
     </Box>
   );
 }

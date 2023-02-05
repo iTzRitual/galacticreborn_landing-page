@@ -14,7 +14,7 @@ const socialsDesktop = {
 };
 
 export default function Socials() {
-  const isMobile = useMediaQuery("(max-width: 600px)");
+  const isMobile = useMediaQuery("(max-width: 900px)");
   return (
     <ButtonGroup sx={isMobile ? socialsMobile : socialsDesktop}>
       <IconButton
