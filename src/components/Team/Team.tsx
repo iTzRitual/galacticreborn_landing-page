@@ -38,7 +38,7 @@ const teamMembers = [
 
 function Team() {
   return (
-    <Background className="app-image-background-team">
+    <Background height="fit-content" className="app-image-background-team">
       <Container
         id="about us"
         maxWidth="xl"

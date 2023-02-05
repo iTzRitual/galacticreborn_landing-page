@@ -1,8 +1,9 @@
 import React from "react";
 
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Typography, useMediaQuery } from "@mui/material";
 
 import Background from "../Background";
+import contactEmail from "../../assets/contact.png";
 
 const buttonDefaultStyle = {
   borderRadius: "20px",
@@ -13,32 +14,69 @@ const buttonDefaultStyle = {
   textTransform: "none",
 };
 
+const mobileBoxCommunityStyle = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  color: "white",
+  gap: "10px",
+};
+
+const defaultBoxCommunityStyle = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "center",
+  marginTop: "20px",
+  width: "45%",
+};
+
+const mobileContainerCommunityStyle = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  color: "white",
+};
+
+const defaultContainerCommunityStyle = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  color: "white",
+};
+
 function Community() {
+  const isMobile = useMediaQuery("(max-width: 600px)");
   return (
     <Background height="80vh" className="app-image-background-community">
       <Container
         id="community"
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          color: "white",
-        }}
+        sx={isMobile ? mobileContainerCommunityStyle : defaultContainerCommunityStyle}
       >
-        <Typography textTransform="none" fontSize="48px" fontFamily="Inter" fontWeight="700">
-          Join the community
-        </Typography>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginTop: "20px",
-            width: "45%",
-          }}
-        >
+        {isMobile ? (
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              marginTop: "120px",
+              marginBottom: "100px",
+            }}
+          >
+            <Typography fontSize="30px" fontFamily="Inter" fontWeight="700">
+              Get in touch
+            </Typography>
+            <img src={contactEmail} alt="contact" style={{ width: "389px" }} />
+          </Box>
+        ) : (
+          <Typography textTransform="none" fontSize="48px" fontFamily="Inter" fontWeight="700">
+            Join the community
+          </Typography>
+        )}
+
+        <Box sx={isMobile ? mobileBoxCommunityStyle : defaultBoxCommunityStyle}>
           <Button
             sx={{
               ...buttonDefaultStyle,
