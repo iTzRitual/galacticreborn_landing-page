@@ -15,7 +15,6 @@ function FAQMobile() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          marginTop: "90px",
           color: "white",
           paddingBottom: "50px !important",
         }}
