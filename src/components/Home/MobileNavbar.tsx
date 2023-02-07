@@ -6,8 +6,10 @@ import MenuIcon from "../../assets/menu_icon.svg";
 function MobileNavbar() {
   const handleMenuClick = () => {
     const pageBody = document.getElementById("app-container");
-    if (pageBody) {
+    const menuBody = document.getElementById("app-mobile-menu");
+    if (pageBody && menuBody) {
       pageBody.classList.add("mobileMenuOpen");
+      menuBody.classList.add("mobileMenuOpen");
     }
   };
   return (

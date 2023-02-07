@@ -23,6 +23,18 @@ html {
 #app-container.mobileMenuOpen {
   transform: translateX(100vw);
 }
+#app-mobile-menu {
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.80), 
+    rgba(0, 0, 0, 0.80)
+  ), url(../background_menu.png);
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#app-mobile-menu.mobileMenuOpen {
+  transform: translateX(100vw);
+}
 
 $enable-ltr: true;
 $enable-rtl: true;

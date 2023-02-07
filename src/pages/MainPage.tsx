@@ -14,29 +14,31 @@ import { useTheme } from "@mui/material/styles";
 export default function MainPage() {
   const theme = useTheme();
   return (
-    <Container
-      id="app-container"
-      maxWidth={false}
-      sx={{
-        padding: "0 !important",
-        margin: "0 !important",
-        display: "flex",
-        flexDirection: "column",
-        minWidth: "100vw",
-        [theme.breakpoints.down(900)]: {
-          transition: ".3s",
-          transform: "translateX(0)",
-        },
-      }}
-    >
+    <div>
       {useMediaQuery(theme.breakpoints.down(900)) && <MobileMenu />}
-      <Home />
-      <About />
-      <Roadmap />
-      <Team />
-      <FAQ />
-      <Community />
-      <StickyButton />
-    </Container>
+      <Container
+        id="app-container"
+        maxWidth={false}
+        sx={{
+          padding: "0 !important",
+          margin: "0 !important",
+          display: "flex",
+          flexDirection: "column",
+          minWidth: "100vw",
+          [theme.breakpoints.down(900)]: {
+            transition: ".3s",
+            transform: "translateX(0)",
+          },
+        }}
+      >
+        <Home />
+        <About />
+        <Roadmap />
+        <Team />
+        <FAQ />
+        <Community />
+        <StickyButton />
+      </Container>
+    </div>
   );
 }

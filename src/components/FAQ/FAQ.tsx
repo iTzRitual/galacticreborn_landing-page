@@ -98,7 +98,7 @@ function FAQ() {
           <Typography fontSize="96px" fontFamily="Inter" fontWeight="700">
             Get in touch
           </Typography>
-          <img src={contactEmail} alt="contact" style={{ marginTop: "-50px" }} />
+          <img src={contactEmail} alt="contact" style={{ marginTop: "-50px", maxWidth: "100%" }} />
         </Box>
       </Container>
     </Background>

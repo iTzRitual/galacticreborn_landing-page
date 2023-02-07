@@ -23,3 +23,8 @@
   background-position: right center;
   z-index: -1;
 }
+@media (max-width: 1168px) {
+  .app-image-background-about__child {
+    background-image: none;
+  }
+}

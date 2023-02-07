@@ -2,7 +2,7 @@ import { Box, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 
 const textMobileStyle = {
-  color: "white",
+  color: "#C0C0C0",
   marginTop: "15px",
   maxWidth: "375px",
   fontSize: "16px",
@@ -10,7 +10,7 @@ const textMobileStyle = {
 };
 
 const textDesktopStyle = {
-  color: "white",
+  color: "#C0C0C0",
   marginTop: "15px",
   maxWidth: "723px",
   fontSize: "20px",

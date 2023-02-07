@@ -12,21 +12,25 @@ interface StageProps {
 const descriptionMobileStyle = {
   fontFamily: "Space",
   textAlign: "left",
-  fontSize: "15px",
+  fontSize: "16px",
+  color: "#C0C0C0",
+  marginTop: "5px",
 };
 
 const descriptionDesktopStyle = {
   fontFamily: "Space",
   textAlign: "left",
   fontSize: "20px",
-  whiteSpace: "nowrap",
+  color: "#C0C0C0",
+  marginTop: "5px",
 };
 
 const pointMobileStyle = {
   fontFamily: "Inter",
   textAlign: "left",
-  fontSize: "12px",
+  fontSize: "16px",
   marginLeft: "10px",
+  color: "#C0C0C0",
 };
 
 const pointDesktopStyle = {
@@ -34,6 +38,7 @@ const pointDesktopStyle = {
   textAlign: "left",
   fontSize: "20px",
   marginLeft: "10px",
+  color: "#C0C0C0",
 };
 
 const boxMobileStyle = {

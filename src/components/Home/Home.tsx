@@ -45,7 +45,7 @@ export default function Home() {
             <Content />
           </Container>
           <Container maxWidth={false} className="app-image-background-home__child" />
-          <ScrollDownButton scrollTo="about" />
+          {useMediaQuery(theme.breakpoints.up(1169)) && <ScrollDownButton scrollTo="about" />}
         </Background>
       )}
     </div>

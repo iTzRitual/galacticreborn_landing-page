@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Container, Typography, useMediaQuery } from "@mui/material";
 import Background from "../Background";
-
+import { useTheme } from "@mui/material/styles";
 import Stage from "./Stage";
 import progressBar from "../../assets/in_progress.svg";
 
@@ -61,6 +61,7 @@ const stages = {
 } as Record<string, IStage>;
 
 export default function Roadmap() {
+  const theme = useTheme();
   const isMobile = useMediaQuery("(max-width: 600px)");
   return (
     <Background height="fit-content" className="app-background-roadmap">
@@ -84,6 +85,7 @@ export default function Roadmap() {
             Roadmap
           </Typography>
         </Box>
+
         {Object.keys(stages).map((stage) => (
           <Stage
             key={stage}
@@ -92,20 +94,24 @@ export default function Roadmap() {
             stagePoints={stages[stage].points}
           />
         ))}
-        {isMobile || (
-          <Box
-            className="roadmap__progressbar"
-            sx={{
-              position: "absolute",
-              top: "13%",
-              left: "55%",
-              transform: "translateX(-50%)",
-              width: "100%",
-            }}
-          >
-            <img src={progressBar} alt="progress bar" />
-          </Box>
-        )}
+        <Box
+          className="roadmap__progressbar"
+          sx={{
+            position: "absolute",
+            top: "13%",
+            transform: "translateX(-50%)",
+            width: "100%",
+            [theme.breakpoints.down(1369)]: {
+              left: "65%",
+            },
+            left: "55%",
+            [theme.breakpoints.down(900)]: {
+              display: "none",
+            },
+          }}
+        >
+          <img src={progressBar} alt="progress bar" />
+        </Box>
       </Container>
     </Background>
   );
