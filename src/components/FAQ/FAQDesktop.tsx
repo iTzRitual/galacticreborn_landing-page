@@ -5,8 +5,11 @@ import Background from "../Background";
 import faqImage from "../../assets/faq.svg";
 import contactEmail from "../../assets/contact.png";
 import ArrowImg from "../../assets/arrow-short";
+import { useTheme } from "@mui/material/styles";
+import { useMediaQuery } from "@mui/material";
 
 function FAQDesktop() {
+  const theme = useTheme();
   return (
     <Background height="fit-content">
       <Container
@@ -27,6 +30,10 @@ function FAQDesktop() {
             maxWidth: "920px",
             backgroundColor: "#252525",
             borderRadius: "50px",
+            [theme.breakpoints.down(900)]: {
+              maxWidth: "100%",
+              flexDirection: "column",
+            },
           }}
         >
           <Box>
@@ -98,7 +105,7 @@ function FAQDesktop() {
           <Typography fontSize="96px" fontFamily="Inter" fontWeight="700">
             Get in touch
           </Typography>
-          <img src={contactEmail} alt="contact" style={{ marginTop: "-50px" }} />
+          <img src={contactEmail} alt="contact" style={{ marginTop: "-50px", maxWidth: "100%" }} />
         </Box>
       </Container>
     </Background>

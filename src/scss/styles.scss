@@ -13,6 +13,7 @@
 body {
   margin: 0;
   background-color: #171717;
+  overflow-x: hidden;
 }
 
 html {
@@ -35,6 +36,7 @@ html {
 #app-mobile-menu.mobileMenuOpen {
   transform: translateX(100vw);
 }
+
 
 $enable-ltr: true;
 $enable-rtl: true;
