@@ -1,8 +1,7 @@
 import React from "react";
 import { Box, Button, Container, Typography, useMediaQuery } from "@mui/material";
-import ContentMobile from "./ContentMobile";
-import ArrowImg from "../../assets/arrow-short";
 import { useTheme } from "@mui/material/styles";
+import ArrowImg from "../../assets/arrow-short";
 
 const buttonDefaultStyle = {
   color: "white",
@@ -20,7 +19,8 @@ const buttonDefaultStyle = {
 
 export default function Content() {
   const theme = useTheme();
-  const isMobile = useMediaQuery("(max-width: 600px)");
+  const isMobile = useMediaQuery(theme.breakpoints.down(450));
+  const isTablet = useMediaQuery(theme.breakpoints.down(1168));
   return (
     <div>
       <Container
@@ -52,10 +52,10 @@ export default function Content() {
             lineHeight: "1",
           }}
         >
-          {useMediaQuery(theme.breakpoints.down(1168)) && (
+          {isMobile ? (
             <Typography
               sx={{
-                fontSize: "48px",
+                fontSize: "42px",
                 fontFamily: "Space",
                 lineHeight: 1,
                 textAlign: "center",
@@ -64,16 +64,30 @@ export default function Content() {
             >
               Galactic <br /> Reborn
             </Typography>
+          ) : (
+            isTablet && (
+              <Typography
+                sx={{
+                  fontSize: "48px",
+                  fontFamily: "Space",
+                  lineHeight: 1,
+                  textAlign: "center",
+                  marginBottom: "40px",
+                }}
+              >
+                Galactic <br /> Reborn
+              </Typography>
+            )
           )}
-          <Typography
+          {/* <Typography
             sx={{
               fontWeight: "bold",
               fontSize: "1rem",
               fontFamily: "Inter",
             }}
           >
-            PRESALE IS LIVE
-          </Typography>
+            PRESALE TBA
+          </Typography> */}
           <Typography
             sx={{
               fontWeight: "bold",
@@ -85,7 +99,7 @@ export default function Content() {
               fontFamily: "Inter",
             }}
           >
-            Lörem ipsum antiheten nyning
+            The Universe Awaits You.
           </Typography>
           <Typography
             sx={{
@@ -93,9 +107,9 @@ export default function Content() {
               color: "#C0C0C0;",
             }}
           >
-            Lörem ipsum aveck gigan eller esat. Farat bifar nusår hexalililiga. Ovivaligt ultrar
-            fixie. Kyrktrappsbröllop mansplaining nöbigen. Mavis dogmafilm orat hemin. Deform
-            krisväska. Parov.
+            Welcome to Galactic Reborn - the ultimate space conquest game. Create your own empire,
+            battle other players, and stake your claim in the universe. Join now and shape the fate
+            of the galaxy!
           </Typography>
           <Box
             sx={{
@@ -121,6 +135,7 @@ export default function Content() {
               Whitepaper
               <ArrowImg direction={0} color="#6F5BDE" />
             </Button>
+
             <Button
               sx={{
                 ...buttonDefaultStyle,
@@ -128,7 +143,7 @@ export default function Content() {
                 backgroundColor: "#6f5bde",
               }}
             >
-              FAQ
+              Docs
               <ArrowImg direction={0} color="#FFF" />
             </Button>
           </Box>

@@ -1,19 +1,30 @@
 import React from "react";
 
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Typography, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import Background from "../Background";
-import faqImage from "../../assets/faq.svg";
+import faqImage from "../../assets/faq.webp";
 import contactEmail from "../../assets/contact.png";
 import ArrowImg from "../../assets/arrow-short";
-import { useTheme } from "@mui/material/styles";
-import { useMediaQuery } from "@mui/material";
 
 function FAQDesktop() {
   const theme = useTheme();
+  const isTablet = useMediaQuery("(max-width: 800px)");
+
+  const imageIsTabletStyle = {
+    borderRadius: "50px",
+    width: "300px",
+  };
+
+  const imageIsDefaultStyle = {
+    borderRadius: "50px",
+    width: "400px",
+  };
+
   return (
     <Background height="fit-content">
       <Container
-        id="faq"
+        id="docs"
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -32,12 +43,16 @@ function FAQDesktop() {
             borderRadius: "50px",
             [theme.breakpoints.down(900)]: {
               maxWidth: "100%",
-              flexDirection: "column",
+              flexDirection: "row",
             },
           }}
         >
           <Box>
-            <img src={faqImage} alt="faq" style={{ borderRadius: "50px" }} />
+            <img
+              src={faqImage}
+              alt="faq"
+              style={isTablet ? imageIsTabletStyle : imageIsDefaultStyle}
+            />
           </Box>
           <Box
             sx={{
@@ -58,17 +73,25 @@ function FAQDesktop() {
                 gap: 0,
               }}
             >
-              <Typography fontSize="64px" fontFamily="Space">
-                FAQ
-                <Typography component="span" fontSize="64px" fontFamily="Inter">
+              <Typography fontSize={isTablet ? "50px" : "64px"} fontFamily="Space">
+                DOCS
+                {/* <Typography
+                  component="span"
+                  fontSize={isTablet ? "50px" : "64px"}
+                  fontFamily="Inter"
+                >
                   ’
                 </Typography>
-                <Typography component="span" fontSize="40px" fontFamily="Space">
+                <Typography
+                  component="span"
+                  fontSize={isTablet ? "30px" : "40px"}
+                  fontFamily="Space"
+                >
                   s
-                </Typography>
+                </Typography> */}
               </Typography>
               <Typography fontSize="16px" fontFamily="Inter" color="#C0C0C0">
-                Lörem ipsum nynisa tenera, mikronde, i tynde, i kisk, kara geonerat med semiseng, är
+                Everything you’ve always wanted to know and more.
               </Typography>
             </Box>
             <Button
@@ -88,7 +111,7 @@ function FAQDesktop() {
                 backgroundColor: "#6f5bde",
               }}
             >
-              View all FAQ’s
+              View Docs
               <ArrowImg direction={0} color="#FFF" />
             </Button>
           </Box>

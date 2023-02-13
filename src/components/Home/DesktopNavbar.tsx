@@ -1,12 +1,12 @@
 import { Box, Button, Container, Toolbar } from "@mui/material";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import React, { useEffect } from "react";
-import Socials from "./Socials";
-import grLogo from "../../assets/galactic_reborn_logo.png";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Socials from "./Socials";
+import grLogo from "../../assets/galactic_reborn_logo.png";
 
-const pages = ["Home", "About", "Roadmap", "About us", "FAQ"];
+const pages = ["Home", "About", "Roadmap", "Team", "Docs"];
 
 const buttonDefaultStyle = {
   my: 3,

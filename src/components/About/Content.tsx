@@ -23,6 +23,9 @@ function Content() {
     <Box
       sx={{
         fontFamily: "Space !important",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
       }}
     >
       <Typography
@@ -38,16 +41,11 @@ function Content() {
         IN YOUR HANDS
       </Typography>
       <Typography sx={isMobile ? textMobileStyle : textDesktopStyle} paragraph>
-        Lörem ipsum dögt antityns: för bäkur i sav klustersmitta nesor ovissa fast tihet. Teration
-        asat prerade i bens. Preck infrade vins antepisa jöv om autov, suprall. Megad hör prelerat
-        och stenomast bäns stöddjur i krohor makrolig lere. Dere håtrelig om revisok dor mms:a
-        flitbonus döhet inte håringar. Lägode minnespinne rer med klimatlarm i nedögåkick och uvik
-        epifehet fasock, epigån faling preling kontopi gängar infrarat även om vyn, epis neling.
-        Masavis diar åska, fån pir med infrande euroktig, gäss ridörtad inte preledes huruvida fär
-        fatänt jöhången aver men kav förutom dism heterorirade hönas. Fening speliga, bänera visk
-        or, förutom made fapyn spetspatient lasodurtad om än dolig nidade tetrafäras såsom prenyn
-        att dododa tills plaviledes i telent bin. Sms-livräddare stereoaktiv nenar kun då did
-        gigekonomi.
+        Welcome to Galactic Reborn - a browser-based space exploration and conquest game where you
+        can create your own intergalactic empire, battle against other players, and stake your claim
+        in the universe. With a unique art style and immersive lore, Galactic Reborn offers endless
+        opportunities for adventure and strategic gameplay. Join the ranks of ambitious space
+        explorers and shape the fate of the galaxy. Are you ready to embark on your journey?
       </Typography>
     </Box>
   );

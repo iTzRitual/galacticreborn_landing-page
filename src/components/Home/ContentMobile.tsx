@@ -34,7 +34,7 @@ export default function ContentMobile() {
           lineHeight: "1",
         }}
       >
-        <Typography
+        {/* <Typography
           sx={{
             fontWeight: "bold",
             fontSize: "1rem",
@@ -42,7 +42,7 @@ export default function ContentMobile() {
           }}
         >
           PRESALE IS LIVE
-        </Typography>
+        </Typography> */}
         <Typography
           sx={{
             fontWeight: "bold",
@@ -53,16 +53,16 @@ export default function ContentMobile() {
             fontFamily: "Inter",
           }}
         >
-          Lörem ipsum antiheten nyning
+          The Universe Awaits You.
         </Typography>
         <Typography
           sx={{
             fontFamily: "Inter",
           }}
         >
-          Lörem ipsum aveck gigan eller esat. Farat bifar nusår hexalililiga. Ovivaligt ultrar
-          fixie. Kyrktrappsbröllop mansplaining nöbigen. Mavis dogmafilm orat hemin. Deform
-          krisväska. Parov.
+          Welcome to Galactic Reborn - the ultimate space conquest game. Create your own empire,
+          battle other players, and stake your claim in the universe. Join now and shape the fate of
+          the galaxy!
         </Typography>
         <Box
           sx={{

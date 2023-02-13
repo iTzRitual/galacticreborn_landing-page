@@ -1,42 +1,98 @@
-import React, { useEffect, useState } from "react";
-import { Container, Typography, Box } from "@mui/material";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useEffect } from "react";
+import { Typography, Box } from "@mui/material";
+import { ethers } from "ethers";
 import ProgressBar from "./ProgressBar";
 import ConnectWallet from "./ConnectWallet";
-import { hooks, metaMask } from "../../connectors/metaMask";
+
 import Swap from "./Swap";
+import { arbitrumChainParams } from "../../constants/chains";
+import TransparentButton from "../TranspapentButton";
+import { parseTime } from "../../utils";
 
-const { useChainId, useAccounts, useIsActivating, useIsActive, useProvider } = hooks;
+interface SwitchChainOrSwapProps {
+  chainId: number | undefined;
+  provider: any;
+  connector: any;
+  contract: ethers.Contract | undefined;
+  startTime: number | undefined;
+}
 
-function Sale() {
-  const chainId = useChainId();
-  const accounts = useAccounts();
-  const isActivating = useIsActivating();
-
-  const isActive = useIsActive();
-
-  const provider = useProvider();
-
-  const [error, setError] = useState<Error | undefined>(undefined);
-
-  // attempt to connect eagerly on mount
-  useEffect(() => {
-    metaMask.connectEagerly().catch(() => {
-      console.debug("Failed to connect eagerly to metamask");
-    });
-  }, []);
-
-  useEffect(() => {
-    if (error) {
-      console.error(error);
+function SwitchChainOrSwap({
+  chainId,
+  provider,
+  connector,
+  contract,
+  startTime,
+}: SwitchChainOrSwapProps) {
+  const handleClick = async () => {
+    try {
+      connector.activate(arbitrumChainParams);
+    } catch (err: any) {
+      // eslint-disable-next-line no-console
+      console.log(err);
     }
-  }, [error]);
+  };
+  return chainId === 5 ? (
+    (startTime && startTime < new Date().getTime() && (
+      <Swap chainId={chainId} provider={provider} contract={contract} />
+    )) || <> </>
+  ) : (
+    <TransparentButton marginTop="20px" onClick={handleClick} text="Add or switch network" />
+  );
+}
+
+interface SaleProps {
+  connector: any;
+  setError: (error: Error | undefined) => void;
+  chainId: number | undefined;
+  provider: any;
+  isActive: boolean;
+  contractBalance: string | undefined;
+  startTime: number | undefined;
+  endTime: number | undefined;
+  contract: ethers.Contract | undefined;
+}
+
+function Sale({
+  connector,
+  setError,
+  chainId,
+  provider,
+  isActive,
+  contractBalance,
+  startTime,
+  endTime,
+  contract,
+}: SaleProps) {
+  const [parsedStartTime, setParsedStartTime] = React.useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    if (connector) {
+      connector.connectEagerly();
+    }
+  }, [connector]);
+
+  // run evry 1 second
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      if (startTime) {
+        if (startTime > now) setParsedStartTime(parseTime(new Date(Number(startTime) * 1000)));
+      }
+      if (endTime) {
+        if (endTime < now) setParsedStartTime(parseTime(new Date(Number(endTime) * 1000)));
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [startTime, endTime]);
 
   // on chainId change, change network to arbitrum
-  useEffect(() => {
-    if (chainId) {
-      metaMask.activate(42161);
-    }
-  }, [chainId]);
+  // useEffect(() => {
+  //   if (chainId) {
+  //     connector.activate(arbitrumChainParams);
+  //   }
+  // }, [chainId, connector]);
 
   return (
     <Box
@@ -45,13 +101,14 @@ function Sale() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        minWidth: "400px",
       }}
     >
       <Typography fontFamily="Space" fontSize="40px" lineHeight="1">
-        Public Sale
+        Presale
       </Typography>
       <Typography fontFamily="Inter" fontSize="16px" fontWeight={700} textAlign="center">
-        1 GCR = 0.006 USDT
+        1 ETH = 150000 $GCR
       </Typography>
       <Box marginTop="40px">
         <Typography
@@ -61,7 +118,7 @@ function Sale() {
           lineHeight="1"
           letterSpacing="0.06em"
         >
-          1 : 55 : 22 : 30
+          {parsedStartTime}
         </Typography>
         <Box
           sx={{
@@ -103,12 +160,18 @@ function Sale() {
         lineHeight={2}
         textAlign="center"
       >
-        ETH Raised 10 / 300
+        ETH Raised {contractBalance} / 300
       </Typography>
       {isActive ? (
-        <Swap chainId={chainId} provider={provider} />
+        <SwitchChainOrSwap
+          chainId={chainId}
+          provider={provider}
+          connector={connector}
+          contract={contract}
+          startTime={startTime}
+        />
       ) : (
-        <ConnectWallet connector={metaMask} setError={setError} />
+        <ConnectWallet connector={connector} setError={setError} />
       )}
     </Box>
   );

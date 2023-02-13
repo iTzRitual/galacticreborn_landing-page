@@ -1,12 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg xmlns="http://www.w3.org/2000/svg"
-aria-label="Ethereum" role="img"
-viewBox="0 0 512 512"><rect
-width="512" height="512"
-rx="15%"
-fill="#ffffff"/><path
-fill="#3C3C3B" d="m256 362v107l131-185z"/><path
-fill="#343434" d="m256 41l131 218-131 78-132-78"/><path
-fill="#8C8C8C" d="m256 41v158l-132 60m0 25l132 78v107"/><path
-fill="#141414" d="m256 199v138l131-78"/><path
-fill="#393939" d="m124 259l132-60v138"/></svg>
+<svg width="195" height="316" viewBox="0 0 195 316" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M96.99 0L94.87 7.20122V216.145L96.99 218.26L193.978 160.93L96.99 0Z" fill="black"/>
+<path d="M96.9901 0L0 160.93L96.9901 218.26V116.845V0Z" fill="black"/>
+<path d="M96.99 236.623L95.7952 238.08V312.51L96.99 315.998L194.037 179.323L96.99 236.623Z" fill="black"/>
+<path d="M96.9901 315.998V236.623L0 179.323L96.9901 315.998Z" fill="black"/>
+<path d="M96.99 218.26L193.978 160.93L96.99 116.845V218.26Z" fill="black"/>
+<path d="M0 160.93L96.9901 218.26V116.845L0 160.93Z" fill="black"/>
+</svg>

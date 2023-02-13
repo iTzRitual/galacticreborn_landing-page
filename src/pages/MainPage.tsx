@@ -1,5 +1,6 @@
 import React from "react";
-import { Container } from "@mui/material";
+import { Container, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import MobileMenu from "../components/MobileMenu/MobileMenu";
 import Home from "../components/Home/Home";
 import About from "../components/About/About";
@@ -8,8 +9,6 @@ import Team from "../components/Team/Team";
 import FAQ from "../components/FAQ/FAQ";
 import Community from "../components/Community/Community";
 import StickyButton from "../components/StickyButton";
-import { useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
 
 export default function MainPage() {
   const theme = useTheme();

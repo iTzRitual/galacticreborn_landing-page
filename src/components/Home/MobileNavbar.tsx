@@ -22,7 +22,7 @@ function MobileNavbar() {
       }}
     >
       <Button onClick={handleMenuClick}>
-        <img src={MenuIcon} />
+        <img src={MenuIcon} alt="Menu Icon" />
       </Button>
       <Socials />
     </Box>

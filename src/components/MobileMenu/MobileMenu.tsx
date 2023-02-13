@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Button } from "@mui/material";
 import CloseMenuIcon from "../../assets/close_menu_icon.svg";
 
-const pages = ["Home", "About", "Roadmap", "About us", "FAQ"];
+const pages = ["Home", "About", "Roadmap", "Team", "Docs"];
 
 export default function MobileMenu() {
   const handleButtonClick = (page: string) => {

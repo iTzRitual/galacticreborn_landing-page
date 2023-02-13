@@ -7,7 +7,7 @@ function TeamMobile() {
   return (
     <Background height="fit-content" className="app-image-background-team-mobile">
       <Container
-        id="about us"
+        id="team"
         maxWidth="xl"
         sx={{
           display: "flex",
@@ -25,6 +25,9 @@ function TeamMobile() {
           sx={{
             width: "100%",
             marginTop: "30px",
+            display: "flex",
+            flexDirection: "column",
+            rowGap: "15px",
           }}
         >
           <Typography
@@ -35,19 +38,13 @@ function TeamMobile() {
             paddingLeft="37px"
             paddingRight="32px"
           >
-            Lörem ipsum nynisa tenera, mikronde, i tynde, i kisk, kara geonerat med semiseng, är
-            vijigt. Transitflykting olingar en krogänat supradegon, astrosat, teranat polyren min.
-            Vinterkräksjuka tempomatisk soheten. Kontrangar jitång, det vill säga anera visenade i
-            gensax, plus soktiga, och bästsäljerism por sotyras. Dose inenat: inte symängen att ded
-            preppare kroning. Mäns dina: doktigt ekoaktiv och jytes, dekass. Hypotorel årenade
-            skräpbot lasell liksom pseudotåder as osm inte heteroskop, ponde, i hemivis. Ir
-            hypobelt, jyde i dining samt beser intrant tredoll det vill säga näsa cosplay, nyre
-            futet teratt epiv. Krode ultrabyd så fatt och nebel. Rease ferade nefusm utan fafuligt
-            biosmos men dekabäling det vill säga bertad hypervalens esk, doläsm fusat, karas, näk.
-            Nebens elingar med stenoras, tåjiss fabement dira, emedan kontravis mädons i teda spesm
-            speplangen, R-tal svemester derade. Vining int nigen innan pret seling pres mänat i
-            vangar fast podda backflyt rura även om niryssade dönat rearat, reasogt ber. Du kan vara
-            drabbad.
+            Embark on a journey through the vast expanse of the crypto-universe with our team of
+            pioneering space explorers. With expertise in game development, marketing, and product
+            management, our team is equipped to guide you through the uncharted territories of our
+            browser galaxy expansion and conquest game. Each member brings unique skills and
+            experiences, fueling our mission to discover new frontiers in the crypto world. Join us
+            as we boldly go where no one has gone before in our quest for the ultimate space
+            discovery
           </Typography>
         </Box>
       </Container>

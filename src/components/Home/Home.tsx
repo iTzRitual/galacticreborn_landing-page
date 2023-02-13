@@ -1,15 +1,16 @@
 import React from "react";
 import { Container, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import Background from "../Background";
 import BackgroundImage from "../BackgroundImage";
 import Navbar from "./Navbar";
 import Content from "./Content";
 import ScrollDownButton from "../ScrollDownButton";
-import { useTheme } from "@mui/material/styles";
 
 export default function Home() {
   const theme = useTheme();
   const isMobile = useMediaQuery("(max-width: 600px)");
+  const isTablet = useMediaQuery(theme.breakpoints.up(1169));
   return (
     <div>
       {isMobile ? (
@@ -45,7 +46,7 @@ export default function Home() {
             <Content />
           </Container>
           <Container maxWidth={false} className="app-image-background-home__child" />
-          {useMediaQuery(theme.breakpoints.up(1169)) && <ScrollDownButton scrollTo="about" />}
+          {isTablet && <ScrollDownButton scrollTo="about" />}
         </Background>
       )}
     </div>

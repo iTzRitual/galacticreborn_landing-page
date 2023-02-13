@@ -12,4 +12,16 @@ const arbitrumChainParams: AddEthereumChainParameter = {
   blockExplorerUrls: ["https://arbiscan.io/"],
 };
 
-export default arbitrumChainParams;
+const goerliChainParams: AddEthereumChainParameter = {
+  chainId: 5,
+  chainName: "Goerli Testnet",
+  nativeCurrency: {
+    name: "Ether",
+    symbol: "ETH",
+    decimals: 18,
+  },
+  rpcUrls: ["https://goerli.infura.io/v3/"],
+  blockExplorerUrls: ["https://goerli.etherscan.io"],
+};
+
+export { arbitrumChainParams, goerliChainParams };

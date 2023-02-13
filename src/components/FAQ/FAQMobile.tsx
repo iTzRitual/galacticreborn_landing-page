@@ -9,7 +9,7 @@ function FAQMobile() {
   return (
     <Background height="fit-content">
       <Container
-        id="faq"
+        id="docs"
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -39,13 +39,13 @@ function FAQMobile() {
             }}
           >
             <Typography fontSize="64px" fontFamily="Space">
-              FAQ
-              <Typography component="span" fontSize="64px" fontFamily="Inter">
+              DOCS
+              {/* <Typography component="span" fontSize="64px" fontFamily="Inter">
                 ’
               </Typography>
               <Typography component="span" fontSize="40px" fontFamily="Space">
                 s
-              </Typography>
+              </Typography> */}
             </Typography>
             <Typography fontSize="16px" fontFamily="Inter" color="#C0C0C0">
               Everything you’ve always wanted to know and more.
@@ -68,7 +68,7 @@ function FAQMobile() {
               backgroundColor: "#6f5bde",
             }}
           >
-            View all FAQ’s
+            View Docs
             <ArrowImg direction={0} color="#FFF" />
           </Button>
         </Box>

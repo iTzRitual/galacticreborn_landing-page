@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Container, Typography, useMediaQuery } from "@mui/material";
-import Background from "../Background";
 import { useTheme } from "@mui/material/styles";
+import Background from "../Background";
 import Stage from "./Stage";
 import progressBar from "../../assets/in_progress.svg";
 
@@ -12,42 +12,41 @@ interface IStage {
 
 const stages = {
   "Stage 1": {
-    description: "Development and Alpha Release",
+    description: "Development and Community Building",
     points: [
-      "Development of basic game mechanics and user interface",
+      "Development of basic game mechanics and the core game loop",
       "Implementation of basic in-game currency and economy",
-      "Testing and bug fixing",
-      "Introduction of player vs player combat",
-      "Implementation of blockchain technology for item ownership and trading",
-      "Release of alpha version for testing and feedback",
+      "Adding token use-cases in the game to bring more value and deflationary models as one of the tokens utility",
+      "Community building",
+      "First Galactic Pass mint",
+      "Conducting $GCR token Presale for whitelisted members on our website",
     ],
   },
   "Stage 2": {
-    description: "Beta Release and Additional Features",
+    description: "Public Sale & Alpha Game Release",
     points: [
-      "Implementation of additional in-game items and ships",
+      "Conducting Public Sale of the $GCR token",
       "Staking and liquidity providing incentives",
-      "Development of alliance systems",
-      "Release of beta version for further testing and feedback",
-      "Implementation of additional gameplay features, such as transportation, exploration",
+      "Release of alpha version of the game and presentation for the public",
+      "Release of beta version Galactic Pass Holders for testing and feedback",
+      "Implementation of additional gameplay features",
     ],
   },
   "Stage 3": {
-    description: "Full Release and Optimization",
+    description: "Full Release and Deflationary Mechanisms",
     points: [
       "Release of full version of the game on the browser",
-      "Continuous bug fixing and optimization",
+      "Introduction of deflationary token mechanisms",
       "Introduction of new in-game events and challenges",
       "Expansion of the game to difference chains",
     ],
   },
   "Stage 4": {
-    description: "Mobile Compatibility and Markets",
+    description: "Mobile Compatibility & Further Token Utilities",
     points: [
       "Implementation of mobile compatibility",
       "Introduction of new in-game items and equipment",
-      "Development of a marketplace for players to buy and sell items",
-      "Development of an in-game stock market",
+      "Deployment of features into the game which will allow players to gain $GCR through a risk-to-earn mechanics",
     ],
   },
   "Stage 5": {
@@ -55,7 +54,7 @@ const stages = {
     points: [
       "Introduction of a referral system",
       "Development of in-game tournaments and leaderboards",
-      "Release of new game updates and features",
+      "Release of Galactic Reborn Expansion series",
     ],
   },
 } as Record<string, IStage>;

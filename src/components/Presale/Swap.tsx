@@ -1,18 +1,63 @@
-import { Typography, Box, Button } from "@mui/material";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable no-restricted-globals */
+import { Typography, Box } from "@mui/material";
 import React from "react";
+import { ethers } from "ethers";
 
+import toast from "react-hot-toast";
 import etherIcon from "../../assets/etherIcon.svg";
+import TransparentInput from "../TranspapentInput";
+import TransparentButton from "../TranspapentButton";
+import { parseErrorMessage } from "../../utils";
 
 const TOKEN_EXCHANGE_RATE = 150000;
 
 interface SwapProps {
   chainId: number | undefined;
   provider: any;
+  contract: ethers.Contract | undefined;
 }
 
-function Swap({ chainId, provider }: SwapProps) {
+function Swap({ chainId, provider, contract }: SwapProps) {
   const [etherForSwap, setEtherForSwap] = React.useState("");
   const [tokenForSwap, setTokenForSwap] = React.useState("");
+
+  const handleSwap = async () => {
+    if (chainId !== 5) {
+      toast.error("Please connect to Arbitrum");
+      return;
+    }
+    if (!provider) {
+      toast.error("Please connect to wallet");
+      return;
+    }
+    if (!contract) {
+      toast.error("Contract not found");
+      return;
+    }
+    if (etherForSwap === "") {
+      toast.error("Please enter ether amount");
+      return;
+    }
+
+    try {
+      const value = ethers.parseEther(etherForSwap);
+      const txBuy = await contract.buyTokens({
+        value,
+      });
+
+      await provider.waitForTransaction(txBuy.hash);
+
+      toast.success("Transaction successful");
+    } catch (err: any) {
+      // check tx reverted reason
+      if (err.reason) {
+        toast.error(parseErrorMessage(err.reason));
+      } else {
+        toast.error("Transaction failed");
+      }
+    }
+  };
 
   const handleOnChangeEther = (event: any) => {
     event.preventDefault();
@@ -28,9 +73,9 @@ function Swap({ chainId, provider }: SwapProps) {
     }
 
     // check if input is too big
-    if (event.target.value > 10) {
-      setEtherForSwap("10");
-      setTokenForSwap((10 * TOKEN_EXCHANGE_RATE).toString());
+    if (event.target.value > 1) {
+      setEtherForSwap("1");
+      setTokenForSwap((1 * TOKEN_EXCHANGE_RATE).toString());
       return;
     }
 
@@ -54,9 +99,9 @@ function Swap({ chainId, provider }: SwapProps) {
     }
 
     // check if input is too big
-    if (event.target.value > 10 * TOKEN_EXCHANGE_RATE) {
-      setTokenForSwap((10 * TOKEN_EXCHANGE_RATE).toString());
-      setEtherForSwap("10");
+    if (event.target.value > 1 * TOKEN_EXCHANGE_RATE) {
+      setTokenForSwap((1 * TOKEN_EXCHANGE_RATE).toString());
+      setEtherForSwap("1");
       return;
     }
 
@@ -66,12 +111,6 @@ function Swap({ chainId, provider }: SwapProps) {
     const ether = event.target.value / TOKEN_EXCHANGE_RATE;
     // round to 2 decimal places
     setEtherForSwap((Math.round(ether * 100) / 100).toString());
-  };
-
-  const handleSwap = () => {
-    if (chainId !== 42161) {
-      alert("Please connect to Arbitrum");
-    }
   };
 
   return (
@@ -94,43 +133,25 @@ function Swap({ chainId, provider }: SwapProps) {
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-around",
-          backgroundColor: "white",
           color: "black",
           borderRadius: "15px",
           height: "40px",
           padding: "0 10px",
         }}
       >
-        <input
-          type="text"
-          placeholder="0.00"
-          pattern="[0-9]+"
-          style={{
-            border: "none",
-            outline: "none",
-            backgroundColor: "transparent",
-            fontSize: "16px",
-            fontFamily: "Inter",
-            fontWeight: 700,
-            color: "black",
-            width: "100%",
-          }}
-          value={etherForSwap}
-          onChange={handleOnChangeEther}
-        />
-        <Typography
-          fontFamily="Inter"
-          fontSize="16px"
-          fontWeight={700}
-          padding="8px 0px"
-          margin="0 2px"
-        >
-          |
-        </Typography>
-        <img src={etherIcon} alt="ether" style={{ padding: "7px 0" }} />
-        <Typography fontFamily="Inter" fontSize="16px" fontWeight={700} padding="8px 0px">
-          ETH
-        </Typography>
+        <TransparentInput onChange={handleOnChangeEther} value={etherForSwap}>
+          <Typography fontFamily="Inter" fontSize="16px" fontWeight={700} margin="-2px 2px">
+            |
+          </Typography>
+          <img
+            src={etherIcon}
+            alt="ether"
+            style={{ width: "20px", height: "20px", marginRight: "3px" }}
+          />
+          <Typography fontFamily="Inter" fontSize="16px" fontWeight={700} marginTop="-2px">
+            ETH
+          </Typography>
+        </TransparentInput>
       </Box>
       <Typography fontFamily="Space" fontSize="16px">
         TO
@@ -140,63 +161,23 @@ function Swap({ chainId, provider }: SwapProps) {
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-around",
-          backgroundColor: "white",
           color: "black",
           borderRadius: "15px",
           height: "40px",
           padding: "0 10px",
         }}
       >
-        <input
-          type="text"
-          placeholder="0.00"
-          pattern="[0-9]+"
-          style={{
-            border: "none",
-            outline: "none",
-            backgroundColor: "transparent",
-            fontSize: "16px",
-            fontFamily: "Inter",
-            fontWeight: 700,
-            color: "black",
-            width: "100%",
-          }}
-          value={tokenForSwap}
-          onChange={handleOnChangeToken}
-        />
-        <Typography
-          fontFamily="Inter"
-          fontSize="16px"
-          fontWeight={700}
-          padding="8px 0px"
-          margin="0 15px"
-        >
-          |
-        </Typography>
+        <TransparentInput onChange={handleOnChangeToken} value={tokenForSwap}>
+          <Typography fontFamily="Inter" fontSize="16px" fontWeight={700} margin="-2px 7px">
+            |
+          </Typography>
 
-        <Typography fontFamily="Inter" fontSize="16px" fontWeight={700} padding="8px 0px">
-          $GCR
-        </Typography>
+          <Typography fontFamily="Inter" fontSize="16px" fontWeight={700} marginTop="-2px">
+            $GCR
+          </Typography>
+        </TransparentInput>
       </Box>
-      <Button
-        variant="contained"
-        onClick={handleSwap}
-        sx={{
-          backgroundColor: "white",
-          color: "black",
-          borderRadius: "15px",
-          height: "40px",
-          width: "50%",
-          marginTop: "25px",
-          fontFamily: "Inter",
-          fontWeight: 700,
-          ":hover": {
-            backgroundColor: "white",
-          },
-        }}
-      >
-        Buy $GCR
-      </Button>
+      <TransparentButton text="Buy $GCR" marginTop="20px" onClick={handleSwap} />
     </Box>
   );
 }

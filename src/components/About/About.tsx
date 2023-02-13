@@ -1,14 +1,14 @@
 import React from "react";
 import { Container, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import Background from "../Background";
 import BackgroundImage from "../BackgroundImage";
 import Content from "./Content";
 import ScrollDownButton from "../ScrollDownButton";
-import { useTheme } from "@mui/material/styles";
 
 export default function About() {
-  const isMobile = useMediaQuery("(max-width: 600px)");
   const theme = useTheme();
+  const isTablet = useMediaQuery(theme.breakpoints.up(1169));
   return (
     <div>
       <Background height="fit-content" className="app-image-background-about">
@@ -33,9 +33,9 @@ export default function About() {
         >
           <Content />
         </Container>
-        {useMediaQuery(theme.breakpoints.up(1169)) && <BackgroundImage />}
+        {isTablet && <BackgroundImage />}
         <Container className="app-image-background-about__child" />
-        {useMediaQuery(theme.breakpoints.up(1169)) && <ScrollDownButton scrollTo="roadmap" />}
+        {isTablet && <ScrollDownButton scrollTo="roadmap" />}
       </Background>
     </div>
   );

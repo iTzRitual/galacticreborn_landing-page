@@ -3,6 +3,7 @@ import { Container } from "@mui/material";
 import Background from "../Background";
 import Navbar from "../Home/Navbar";
 import PresaleBox from "./PresaleBox";
+import WebProvider from "./WebProvider";
 
 function PresalePage() {
   return (
@@ -17,6 +18,7 @@ function PresalePage() {
         }}
       >
         <Navbar />
+        <WebProvider />
         <PresaleBox />
       </Container>
     </Background>

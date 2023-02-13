@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Space";
-  src: url("src/fonts/SPACE.ttf") format("truetype");
+  src: url("SPACE.ttf") format("truetype");
 }
 
 body {
@@ -27,7 +27,7 @@ html {
 }
 #app-mobile-menu {
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url(../background_menu.png);
+    url(../background_menu.webp);
   background-size: auto 100%;
   background-position: center;
   background-repeat: no-repeat;

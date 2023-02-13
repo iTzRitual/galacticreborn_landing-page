@@ -21,6 +21,7 @@ const mobileBoxCommunityStyle = {
   justifyContent: "center",
   color: "white",
   gap: "10px",
+  marginBottom: "100px !important",
 };
 
 const defaultBoxCommunityStyle = {
@@ -29,7 +30,7 @@ const defaultBoxCommunityStyle = {
   justifyContent: "space-between",
   alignItems: "center",
   marginTop: "20px",
-  width: "45%",
+  columnGap: "20px",
 };
 
 const mobileContainerCommunityStyle = {
@@ -47,24 +48,36 @@ const defaultContainerCommunityStyle = {
   color: "white",
 };
 
+const mobileTextBoxCommunityStyle = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  marginTop: "120px",
+  marginBottom: "30px",
+};
+
+const defaultTextBoxCommunityStyle = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  marginTop: "120px",
+  marginBottom: "100px",
+};
+
 function Community() {
   const isMobile = useMediaQuery("(max-width: 600px)");
   return (
-    <Background height="80vh" className="app-image-background-community">
+    <Background
+      height={isMobile ? "fit-content" : "80vh"}
+      className="app-image-background-community"
+    >
       <Container
         id="community"
+        maxWidth={false}
         sx={isMobile ? mobileContainerCommunityStyle : defaultContainerCommunityStyle}
       >
         {isMobile ? (
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              marginTop: "120px",
-              marginBottom: "100px",
-            }}
-          >
+          <Box sx={isMobile ? mobileTextBoxCommunityStyle : defaultTextBoxCommunityStyle}>
             <Typography fontSize="30px" fontFamily="Inter" fontWeight="700">
               Get in touch
             </Typography>
