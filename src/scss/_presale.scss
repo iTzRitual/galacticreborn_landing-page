@@ -1,0 +1,33 @@
+.app-image-background-presale {
+  background-image: url("background_presale.png");
+  background-size: cover;
+}
+
+.app-presale-box-background {
+  background: linear-gradient(
+    107.95deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.2) 0.01%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  border: 2px solid #8f4be7;
+  backdrop-filter: blur(15px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 25px;
+}
+
+.app-progress-bar {
+  background: white;
+  border-radius: 15px;
+  height: 20px;
+  border: 1px solid white;
+  min-width: 100%;
+}
+
+.app-progress-bar-fill {
+  background: #8f4be7;
+  border-radius: 15px;
+  height: 20px;
+}
+

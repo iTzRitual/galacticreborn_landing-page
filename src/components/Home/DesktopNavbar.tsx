@@ -1,5 +1,6 @@
 import { Box, Button, Container, Toolbar } from "@mui/material";
-import React from "react";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import React, { useEffect } from "react";
 import Socials from "./Socials";
 import grLogo from "../../assets/galactic_reborn_logo.png";
 import { useTheme } from "@mui/material/styles";
@@ -20,14 +21,36 @@ const buttonDefaultStyle = {
 
 function DesktopNavbar() {
   const theme = useTheme();
-  const [isPageActive] = React.useState<string>("Home");
+  const [isPageActive, setIsPageActive] = React.useState<string>("Home");
+  const isPresalePage = useLocation().pathname.includes("presale");
+
+  const navigate = useNavigate();
   const handleButtonClick = (page: string) => {
     // scroll to section
-    const element = document.getElementById(page.toLowerCase());
+    let element = document.getElementById(page.toLowerCase());
     if (element) {
       element.scrollIntoView();
     }
+
+    // if presale page, redirect to home page
+    if (isPresalePage) {
+      navigate("/");
+      // scroll to section set delay to wait for page to load
+      setTimeout(() => {
+        element = document.getElementById(page.toLowerCase());
+        if (element) {
+          element.scrollIntoView();
+        }
+      }, 1000);
+    }
   };
+
+  useEffect(() => {
+    if (isPresalePage) {
+      setIsPageActive("Presale");
+    }
+  }, [isPresalePage]);
+
   return (
     <Container
       maxWidth={false}
