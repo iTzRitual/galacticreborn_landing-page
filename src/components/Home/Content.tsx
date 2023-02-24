@@ -79,43 +79,47 @@ export default function Content() {
               </Typography>
             )
           )}
-          {/* <Typography
+          <Typography
             sx={{
-              fontWeight: "bold",
+              fontWeight: "100",
               fontSize: "1rem",
+              lineHeight: "1rem",
               fontFamily: "Inter",
+              color: "#C0C0C0;",
             }}
           >
-            PRESALE TBA
-          </Typography> */}
+            BROWSER P&E STRATEGIC GAME
+          </Typography>
           <Typography
             sx={{
               fontWeight: "bold",
-              fontSize: "3rem",
-              lineHeight: "3rem",
+              fontSize: "48px",
+              lineHeight: "48px",
               marginTop: "10px",
               marginBottom: "10px",
               whiteSpace: "wrap",
               fontFamily: "Inter",
             }}
           >
-            The Universe Awaits You.
+            Endless galaxy <br /> is waiting for you
           </Typography>
           <Typography
             sx={{
               fontFamily: "Inter",
               color: "#C0C0C0;",
+              fontSize: "20px",
+              fontWeight: "200",
             }}
           >
-            Welcome to Galactic Reborn - the ultimate space conquest game. Create your own empire,
-            battle other players, and stake your claim in the universe. Join now and shape the fate
-            of the galaxy!
+            Welcome to <span style={{ fontWeight: "400", color: "white" }}>Galactic Reborn</span> -
+            the ultimate space conquest game. Create your own empire, battle other players, and
+            stake your claim in the universe. Join now and shape the fate of the galaxy!
           </Typography>
           <Box
             sx={{
               display: "flex",
               gap: "20px",
-              marginTop: "40px",
+              marginTop: "25px",
               [theme.breakpoints.down(1168)]: {
                 flexDirection: "column",
                 width: "200px",
@@ -125,7 +129,7 @@ export default function Content() {
               },
             }}
           >
-            <Button
+            {/* <Button
               sx={{
                 ...buttonDefaultStyle,
                 minWidth: "172px",
@@ -144,6 +148,24 @@ export default function Content() {
               }}
             >
               Docs
+              <ArrowImg direction={0} color="#FFF" />
+            </Button> */}
+            <Button
+              sx={{
+                ...buttonDefaultStyle,
+                color: "#6f5bde",
+              }}
+            >
+              Telegram
+              <ArrowImg direction={0} color="#6F5BDE" />
+            </Button>
+            <Button
+              sx={{
+                ...buttonDefaultStyle,
+                backgroundColor: "#6f5bde",
+              }}
+            >
+              Discord
               <ArrowImg direction={0} color="#FFF" />
             </Button>
           </Box>

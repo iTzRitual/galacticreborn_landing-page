@@ -86,15 +86,18 @@ function DesktopNavbar() {
               </Button>
             ))}
             <Button
+              onClick={() => handleButtonClick("community")}
               sx={{
                 ...buttonDefaultStyle,
                 color: "#6f5bde",
-                width: "139px",
+                minWidth: "139px",
                 marginLeft: "10px",
+                paddingLeft: "20px",
+                paddingRight: "20px",
               }}
               className="app-get-started-button"
             >
-              Get Started
+              Join Community
             </Button>
             <Socials />
           </Box>

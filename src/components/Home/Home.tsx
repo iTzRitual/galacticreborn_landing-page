@@ -46,7 +46,6 @@ export default function Home() {
             <Content />
           </Container>
           <Container maxWidth={false} className="app-image-background-home__child" />
-          {isTablet && <ScrollDownButton scrollTo="about" />}
         </Background>
       )}
     </div>

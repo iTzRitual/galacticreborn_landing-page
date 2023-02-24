@@ -19,7 +19,7 @@ export default function About() {
             justifyContent: "center",
             marginRight: "-1px",
             flexDirection: "column",
-            marginLeft: "40px",
+            marginLeft: "136px",
             [theme.breakpoints.down(1168)]: {
               width: "800px",
               maxWidth: "100%",
@@ -35,7 +35,6 @@ export default function About() {
         </Container>
         {isTablet && <BackgroundImage />}
         <Container className="app-image-background-about__child" />
-        {isTablet && <ScrollDownButton scrollTo="roadmap" />}
       </Background>
     </div>
   );
