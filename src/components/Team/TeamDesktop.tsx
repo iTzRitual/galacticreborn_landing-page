@@ -47,6 +47,8 @@ function TeamDesktop() {
           flexDirection: "column",
           alignItems: "center",
           marginTop: "90px",
+          marginBottom: "90px",
+          justifyContent: "center",
           color: "white",
           paddingBottom: "50px !important",
         }}
@@ -63,7 +65,13 @@ function TeamDesktop() {
             rowGap: "15px",
           }}
         >
-          <Typography fontSize="24px" fontFamily="Inter" overflow="hidden" color="#C0C0C0">
+          <Typography
+            fontSize="20px"
+            fontFamily="Inter"
+            overflow="hidden"
+            color="#C0C0C0"
+            sx={{ fontWeight: "200" }}
+          >
             Embark on a journey through the vast expanse of the crypto-universe with our team of
             pioneering space explorers. With expertise in game development, marketing, and product
             management, our team is equipped to guide you through the uncharted territories of our
@@ -79,7 +87,7 @@ function TeamDesktop() {
             flexdirection: "row",
             flexWrap: "wrap",
             justifyContent: "space-around",
-            marginTop: "50px",
+            marginTop: "110px",
             width: "100%",
             rowGap: "50px",
             columnGap: "25px",

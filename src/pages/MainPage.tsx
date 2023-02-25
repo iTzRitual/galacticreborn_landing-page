@@ -36,8 +36,8 @@ export default function MainPage() {
         <Team />
         <FAQ />
         <Community />
-        <StickyButton />
       </Container>
+      <StickyButton />
     </div>
   );
 }

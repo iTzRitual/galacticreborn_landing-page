@@ -4,7 +4,7 @@ import { Box, Button, Container, Typography, useMediaQuery } from "@mui/material
 import { useTheme } from "@mui/material/styles";
 import Background from "../Background";
 import faqImage from "../../assets/faq.webp";
-import contactEmail from "../../assets/contact.png";
+import contactEmail from "../../assets/contact.webp";
 import ArrowImg from "../../assets/arrow-short";
 
 function FAQDesktop() {
@@ -73,7 +73,7 @@ function FAQDesktop() {
                 gap: 0,
               }}
             >
-              <Typography fontSize={isTablet ? "50px" : "64px"} fontFamily="Space">
+              <Typography fontSize={isTablet ? "50px" : "3rem"} fontFamily="Space">
                 DOCS
                 {/* <Typography
                   component="span"
@@ -95,6 +95,7 @@ function FAQDesktop() {
               </Typography>
             </Box>
             <Button
+              disabled
               sx={{
                 color: "white",
                 display: "flex",
@@ -106,13 +107,12 @@ function FAQDesktop() {
                 borderRadius: "25px",
                 columnGap: "10px",
                 paddingLeft: "25px",
-                paddingRight: "15px",
+                paddingRight: "25px",
                 minWidth: "111px",
                 backgroundColor: "#6f5bde",
               }}
             >
-              View Docs
-              <ArrowImg direction={0} color="#FFF" />
+              *Coming Soon* Docs
             </Button>
           </Box>
         </Box>

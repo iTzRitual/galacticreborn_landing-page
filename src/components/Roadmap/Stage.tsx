@@ -21,8 +21,9 @@ const descriptionDesktopStyle = {
   fontFamily: "Space",
   textAlign: "left",
   fontSize: "20px",
+  lineHeight: "1",
   color: "#C0C0C0",
-  marginTop: "5px",
+  marginTop: "-5px",
 };
 
 const pointMobileStyle = {
@@ -37,6 +38,7 @@ const pointDesktopStyle = {
   fontFamily: "Inter",
   textAlign: "left",
   fontSize: "20px",
+  fontWeight: "200",
   marginLeft: "10px",
   color: "#C0C0C0",
 };
@@ -58,7 +60,10 @@ function Stage({ stage, description, stagePoints }: StageProps) {
 
   return (
     <Box sx={isMobile ? boxMobileStyle : boxDesktopStyle}>
-      <Typography variant={isMobile ? "h5" : "h4"} sx={{ fontFamily: "Space", textAlign: "left" }}>
+      <Typography
+        variant={isMobile ? "h5" : "h4"}
+        sx={{ fontFamily: "Space", textAlign: "left", fontSize: "36px" }}
+      >
         {stage}
       </Typography>
       <Typography sx={isMobile ? descriptionMobileStyle : descriptionDesktopStyle}>

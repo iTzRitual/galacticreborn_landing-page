@@ -28,6 +28,8 @@ export default function Content() {
           height: "100%",
           width: "100%",
           minHeight: "80vh",
+          display: "flex",
+          justifyContent: "center",
         }}
       >
         <Box
