@@ -7,6 +7,7 @@ const pages = ["Home", "About", "Roadmap", "Team", "Docs"];
 export default function MobileMenu() {
   const handleButtonClick = (page: string) => {
     const element = document.getElementById(page.toLowerCase());
+    const html = document.documentElement;
     const pageBody = document.getElementById("app-container");
     const menuBody = document.getElementById("app-mobile-menu");
     if (element) {
@@ -14,15 +15,18 @@ export default function MobileMenu() {
       if (pageBody && menuBody) {
         pageBody.classList.remove("mobileMenuOpen");
         menuBody.classList.remove("mobileMenuOpen");
+        html.style.overflowY = "auto";
       }
     }
   };
   const handleMenuClick = () => {
     const pageBody = document.getElementById("app-container");
     const menuBody = document.getElementById("app-mobile-menu");
+    const html = document.documentElement;
     if (pageBody && menuBody) {
       pageBody.classList.remove("mobileMenuOpen");
       menuBody.classList.remove("mobileMenuOpen");
+      html.style.overflowY = "auto";
     }
   };
   return (

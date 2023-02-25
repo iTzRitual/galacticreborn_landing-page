@@ -2,8 +2,10 @@ import React from "react";
 
 import { Box, Button, Container, Typography, useMediaQuery } from "@mui/material";
 
+import { Telegram, Twitter } from "@mui/icons-material";
 import Background from "../Background";
 import contactEmail from "../../assets/contact.png";
+import Discord from "../Socials/Discord";
 
 const buttonDefaultStyle = {
   borderRadius: "20px",
@@ -99,7 +101,7 @@ function Community() {
             href="https://discord.com/invite/CQqm2D8J3U"
           >
             Discord
-            <img src="discord.svg" alt="discord" style={{ marginLeft: "15px" }} />
+            <Discord color="#7289DA" className="discord" />
           </Button>
           <Button
             sx={{
@@ -110,7 +112,7 @@ function Community() {
             href="https://twitter.com/GalacticReborn"
           >
             Twitter
-            <img src="twitter.svg" alt="twitter" style={{ marginLeft: "15px" }} />
+            <Twitter sx={{ color: "#1DA1F2" }} className="twitter" />
           </Button>
           <Button
             sx={{
@@ -121,7 +123,7 @@ function Community() {
             href="https://t.me/galactic_reborn_offical_chat"
           >
             Telegram
-            <img src="telegram.svg" alt="telegram" style={{ marginLeft: "15px" }} />
+            <Telegram sx={{ color: "#0088CC" }} className="telegram" />
           </Button>
         </Box>
       </Container>

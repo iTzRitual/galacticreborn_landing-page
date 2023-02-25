@@ -7,9 +7,11 @@ function MobileNavbar() {
   const handleMenuClick = () => {
     const pageBody = document.getElementById("app-container");
     const menuBody = document.getElementById("app-mobile-menu");
+    const html = document.documentElement;
     if (pageBody && menuBody) {
       pageBody.classList.add("mobileMenuOpen");
       menuBody.classList.add("mobileMenuOpen");
+      html.style.overflowY = "hidden";
     }
   };
   return (

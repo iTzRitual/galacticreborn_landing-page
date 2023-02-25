@@ -1,6 +1,9 @@
 import React from "react";
 
 import { ButtonGroup, IconButton, useMediaQuery } from "@mui/material";
+import { Telegram, Twitter } from "@mui/icons-material";
+import Discord from "../Socials/Discord";
+import Medium from "../Socials/Medium";
 
 const socialsMobile = {
   display: "flex",
@@ -24,16 +27,16 @@ export default function Socials() {
           height: "46px",
         }}
       >
-        <img src="medium.svg" alt="medium" />
+        <Medium />
       </IconButton>
       <IconButton href="https://discord.com/invite/CQqm2D8J3U">
-        <img src="discord.svg" alt="discord" />
+        <Discord />
       </IconButton>
       <IconButton href="https://twitter.com/GalacticReborn">
-        <img src="twitter.svg" alt="twitter" />
+        <Twitter sx={{ color: "white" }} />
       </IconButton>
       <IconButton href="https://t.me/galactic_reborn_offical_chat">
-        <img src="telegram.svg" alt="telegram" />
+        <Telegram sx={{ color: "white" }} />
       </IconButton>
     </ButtonGroup>
   );

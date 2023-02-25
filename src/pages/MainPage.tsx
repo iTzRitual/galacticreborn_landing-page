@@ -12,9 +12,10 @@ import StickyButton from "../components/StickyButton";
 
 export default function MainPage() {
   const theme = useTheme();
+  const isTablet = useMediaQuery(theme.breakpoints.down(900));
   return (
     <div>
-      {useMediaQuery(theme.breakpoints.down(900)) && <MobileMenu />}
+      {isTablet && <MobileMenu />}
       <Container
         id="app-container"
         maxWidth={false}
@@ -36,8 +37,8 @@ export default function MainPage() {
         <Team />
         <FAQ />
         <Community />
-        <StickyButton />
       </Container>
+      <StickyButton />
     </div>
   );
 }
