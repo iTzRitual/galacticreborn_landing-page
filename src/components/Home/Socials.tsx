@@ -18,7 +18,8 @@ export default function Socials() {
   return (
     <ButtonGroup sx={isMobile ? socialsMobile : socialsDesktop}>
       <IconButton
-        href="https://medium.com/"
+        href="https://medium.com/@galacticreborn"
+        target="_blank"
         sx={{
           width: "46px",
           height: "46px",
@@ -26,13 +27,13 @@ export default function Socials() {
       >
         <img src="medium.svg" alt="medium" />
       </IconButton>
-      <IconButton href="https://discord.com/invite/CQqm2D8J3U">
+      <IconButton target="_blank" href="https://discord.com/invite/CQqm2D8J3U">
         <img src="discord.svg" alt="discord" />
       </IconButton>
-      <IconButton href="https://twitter.com/GalacticReborn">
+      <IconButton target="_blank" href="https://twitter.com/GalacticReborn">
         <img src="twitter.svg" alt="twitter" />
       </IconButton>
-      <IconButton href="https://t.me/galactic_reborn_offical_chat">
+      <IconButton target="_blank" href="https://t.me/galactic_reborn_offical_chat">
         <img src="telegram.svg" alt="telegram" />
       </IconButton>
     </ButtonGroup>

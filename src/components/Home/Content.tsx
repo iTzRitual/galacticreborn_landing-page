@@ -44,7 +44,7 @@ export default function Content() {
             [theme.breakpoints.down(1600)]: {
               marginLeft: "50px",
             },
-            [theme.breakpoints.down(1168)]: {
+            [theme.breakpoints.down(1169)]: {
               marginLeft: "auto",
               marginRight: "auto",
               width: "800px",
@@ -122,7 +122,7 @@ export default function Content() {
               display: "flex",
               gap: "20px",
               marginTop: "25px",
-              [theme.breakpoints.down(1168)]: {
+              [theme.breakpoints.down(1169)]: {
                 flexDirection: "column",
                 width: "200px",
                 gap: "15px",

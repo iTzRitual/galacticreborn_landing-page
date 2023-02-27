@@ -20,7 +20,7 @@ export default function About() {
             marginRight: "-1px",
             flexDirection: "column",
             marginLeft: "136px",
-            [theme.breakpoints.down(1168)]: {
+            [theme.breakpoints.down(1169)]: {
               width: "800px",
               maxWidth: "100%",
               textAlign: "center",
@@ -28,6 +28,7 @@ export default function About() {
               marginRight: "auto",
               paddingLeft: "5%",
               paddingRight: "5%",
+              marginBottom: "50px",
             },
           }}
         >

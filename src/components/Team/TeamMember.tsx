@@ -1,5 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 interface TeamMemberProps {
   avatar: string;
@@ -9,10 +11,16 @@ interface TeamMemberProps {
 }
 
 function TeamMember({ avatar, nickname, roles, glow }: TeamMemberProps) {
+  const theme = useTheme();
   return (
     <Box
       sx={{
-        width: "fit-content",
+        [theme.breakpoints.down(1300)]: {
+          width: "calc(50% - 12.5px)",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        },
       }}
     >
       <img src={avatar} alt="avatar" className={`app-team-member-avatar ${glow}`} />
@@ -21,6 +29,7 @@ function TeamMember({ avatar, nickname, roles, glow }: TeamMemberProps) {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          justifyContent: "center",
           marginTop: "10px",
           width: "100%",
         }}
@@ -33,7 +42,16 @@ function TeamMember({ avatar, nickname, roles, glow }: TeamMemberProps) {
           ))}
         </Typography>
         {roles.map((role) => (
-          <Typography key={role}>{role}</Typography>
+          <Typography
+            sx={{
+              fontFamily: "Inter",
+              fontSize: "16px",
+              color: "#B3B3B3",
+            }}
+            key={role}
+          >
+            {role}
+          </Typography>
         ))}
       </Box>
     </Box>

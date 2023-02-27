@@ -1,5 +1,6 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
+import { useTheme } from "@mui/material/styles";
 
 const textMobileStyle = {
   fontFamily: "Inter",
@@ -22,7 +23,7 @@ const textDesktopStyle = {
 
 function Content() {
   const isMobile = useMediaQuery("(max-width: 600px)");
-
+  const theme = useTheme();
   return (
     <Box
       sx={{
@@ -30,6 +31,9 @@ function Content() {
         display: "flex",
         flexDirection: "column",
         alignItems: "start",
+        [theme.breakpoints.down(1169)]: {
+          alignItems: "center",
+        },
       }}
     >
       <Typography

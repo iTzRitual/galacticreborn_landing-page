@@ -3,7 +3,7 @@ import React from "react";
 import { Box, Button, Container, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Background from "../Background";
-import faqImage from "../../assets/faq.webp";
+import faqImage from "/gcrlogo.svg";
 import contactEmail from "../../assets/contact.webp";
 import ArrowImg from "../../assets/arrow-short";
 
@@ -18,7 +18,9 @@ function FAQDesktop() {
 
   const imageIsDefaultStyle = {
     borderRadius: "50px",
-    width: "400px",
+    width: "550px",
+    marginLeft: "-55px",
+    marginTop: "-75px",
   };
 
   return (
@@ -30,7 +32,7 @@ function FAQDesktop() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          marginTop: "90px",
+          marginTop: "50px",
           color: "white",
           paddingBottom: "50px !important",
         }}
@@ -41,6 +43,8 @@ function FAQDesktop() {
             maxWidth: "920px",
             backgroundColor: "#252525",
             borderRadius: "50px",
+            overflow: "hidden",
+            height: "400px",
             [theme.breakpoints.down(900)]: {
               maxWidth: "100%",
               flexDirection: "row",
@@ -97,7 +101,7 @@ function FAQDesktop() {
             <Button
               disabled
               sx={{
-                color: "white",
+                color: "#C0C0C0 !important",
                 display: "flex",
                 fontSize: "14px",
                 fontWeight: 700,
@@ -112,7 +116,7 @@ function FAQDesktop() {
                 backgroundColor: "#6f5bde",
               }}
             >
-              *Coming Soon* Docs
+              Stay tuned...
             </Button>
           </Box>
         </Box>
@@ -121,8 +125,8 @@ function FAQDesktop() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            marginTop: "150px",
-            marginBottom: "250px",
+            marginTop: "250px",
+            marginBottom: "50px",
           }}
         >
           <Typography fontSize="96px" fontFamily="Inter" fontWeight="700">

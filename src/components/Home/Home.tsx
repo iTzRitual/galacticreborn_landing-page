@@ -37,7 +37,7 @@ export default function Home() {
               display: "flex",
               marginLeft: "-1px",
               flexDirection: "column",
-              [theme.breakpoints.down(1168)]: {
+              [theme.breakpoints.down(1169)]: {
                 width: "100%",
                 maxWidth: "none",
               },

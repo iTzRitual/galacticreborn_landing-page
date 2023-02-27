@@ -8,35 +8,38 @@ import avatar1 from "../../assets/avatar1.webp";
 import avatar2 from "../../assets/avatar2.webp";
 import avatar3 from "../../assets/avatar3.webp";
 import avatar4 from "../../assets/avatar4.webp";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 
 const teamMembers = [
   {
     avatar: avatar1,
     nickname: ["B", "ad", "O", "ne"],
-    roles: ["Founder", "Full-Stack Developer"],
+    roles: ["Full-Stack Developer", "Solidity Developer"],
     glow: "team-member1-glow",
   },
   {
     avatar: avatar4,
     nickname: ["H", "rs", "L", "xrd"],
-    roles: ["UI/UX Designer", "Front-End Developer"],
+    roles: ["Front-End Developer", "UI/UX Designer"],
     glow: "team-member2-glow",
   },
   {
     avatar: avatar3,
     nickname: ["B", "omber", "M", "an"],
-    roles: ["Project Manager", "Partnerships"],
+    roles: ["Project Manager", "Marketing"],
     glow: "team-member3-glow",
   },
   {
     avatar: avatar2,
     nickname: ["M", "ilo"],
-    roles: ["Research", "Full-Stack Developer"],
+    roles: ["Full-Stack Developer", "Research"],
     glow: "team-member4-glow",
   },
 ];
 
 function TeamDesktop() {
+  const theme = useTheme();
   return (
     <Background height="fit-content" className="app-image-background-team">
       <Container
@@ -51,6 +54,8 @@ function TeamDesktop() {
           justifyContent: "center",
           color: "white",
           paddingBottom: "50px !important",
+          paddingLeft: "50px !important",
+          paddingRight: "50px !important",
         }}
       >
         <Typography fontSize="3rem" fontFamily="Space">
@@ -70,7 +75,12 @@ function TeamDesktop() {
             fontFamily="Inter"
             overflow="hidden"
             color="#C0C0C0"
-            sx={{ fontWeight: "200" }}
+            sx={{
+              fontWeight: "200",
+              [theme.breakpoints.down(1600)]: {
+                padding: "0 20px",
+              },
+            }}
           >
             Embark on a journey through the vast expanse of the crypto-universe with our team of
             pioneering space explorers. With expertise in game development, marketing, and product

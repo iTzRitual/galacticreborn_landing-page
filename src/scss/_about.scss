@@ -1,7 +1,7 @@
 .app-mobile-background-about {
   background-color: #171717;
   background-image: linear-gradient(180deg, #171717 0%, rgba(23, 23, 23, 0) 82.11%),
-    linear-gradient(360deg, #171717 0%, rgba(23, 23, 23, 0) 82.11%), url("background_about.svg");
+    linear-gradient(360deg, #171717 0%, rgba(23, 23, 23, 0) 82.11%), url("background_about.png");
   background-position: bottom;
   background-repeat: no-repeat;
   min-width: 375px;
@@ -12,7 +12,7 @@
 .app-image-background-about__child {
   background-image: linear-gradient(90deg, #171717 0%, rgba(23, 23, 23, 0) 72.11%),
     linear-gradient(180deg, #171717 1%, rgba(23, 23, 23, 0) 25.11%),
-    linear-gradient(360deg, #171717 1%, rgba(23, 23, 23, 0) 25.11%), url("background_about.svg");
+    linear-gradient(360deg, #171717 1%, rgba(23, 23, 23, 0) 25.11%), url("background_about.png");
   position: absolute;
   top: 0;
   right: 0;
@@ -20,11 +20,19 @@
   max-width: 70%;
   height: 100%;
   background-size: cover;
-  background-position: right center;
+  background-position: left center;
   z-index: -1;
 }
 @media (max-width: 1168px) {
+  .app-image-background-about {
+    margin-top: 50px;
+  }
   .app-image-background-about__child {
-    background-image: none;
+    max-width: none;
+    background-image: 
+      linear-gradient(90deg, rgba(23, 23, 23, 0.65) 0%, rgba(23, 23, 23, 0.65) 100%), 
+      linear-gradient(180deg, #171717 1%, rgba(23, 23, 23, 0) 25.11%), 
+      linear-gradient(360deg, #171717 1%, rgba(23, 23, 23, 0) 25.11%), 
+      url(background_about.png);
   }
 }
