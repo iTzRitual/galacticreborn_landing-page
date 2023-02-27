@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Box, Container, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import Background from "../Background";
 import TeamMember from "./TeamMember";
 
@@ -8,8 +9,6 @@ import avatar1 from "../../assets/avatar1.webp";
 import avatar2 from "../../assets/avatar2.webp";
 import avatar3 from "../../assets/avatar3.webp";
 import avatar4 from "../../assets/avatar4.webp";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
 
 const teamMembers = [
   {
@@ -79,6 +78,9 @@ function TeamDesktop() {
               fontWeight: "200",
               [theme.breakpoints.down(1600)]: {
                 padding: "0 20px",
+              },
+              [theme.breakpoints.down(600)]: {
+                fontSize: "16px",
               },
             }}
           >

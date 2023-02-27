@@ -5,12 +5,10 @@ import Background from "../Background";
 import BackgroundImage from "../BackgroundImage";
 import Navbar from "./Navbar";
 import Content from "./Content";
-import ScrollDownButton from "../ScrollDownButton";
 
 export default function Home() {
   const theme = useTheme();
   const isMobile = useMediaQuery("(max-width: 600px)");
-  const isTablet = useMediaQuery(theme.breakpoints.up(1169));
   return (
     <div>
       {isMobile ? (

@@ -4,7 +4,6 @@ import { useTheme } from "@mui/material/styles";
 import Background from "../Background";
 import BackgroundImage from "../BackgroundImage";
 import Content from "./Content";
-import ScrollDownButton from "../ScrollDownButton";
 
 export default function About() {
   const theme = useTheme();

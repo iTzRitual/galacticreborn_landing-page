@@ -4,7 +4,6 @@ import { Box, Button, Container, Typography, useMediaQuery } from "@mui/material
 
 import { Telegram, Twitter } from "@mui/icons-material";
 import Background from "../Background";
-import contactEmail from "../../assets/contact.webp";
 import Discord from "../Socials/Discord";
 
 const buttonDefaultStyle = {
@@ -52,22 +51,6 @@ const defaultContainerCommunityStyle = {
   color: "white",
 };
 
-const mobileTextBoxCommunityStyle = {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  marginTop: "120px",
-  marginBottom: "30px",
-};
-
-const defaultTextBoxCommunityStyle = {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  marginTop: "120px",
-  marginBottom: "100px",
-};
-
 function Community() {
   const isMobile = useMediaQuery("(max-width: 600px)");
   return (
@@ -93,6 +76,7 @@ function Community() {
               color: "#7289DA",
               border: "2px solid #7289DA",
             }}
+            target="_blank"
             href="https://discord.com/invite/CQqm2D8J3U"
           >
             Discord
@@ -104,6 +88,7 @@ function Community() {
               color: "#1DA1F2",
               border: "2px solid #1DA1F2",
             }}
+            target="_blank"
             href="https://twitter.com/GalacticReborn"
           >
             Twitter
@@ -115,6 +100,7 @@ function Community() {
               color: "#0088CC",
               border: "2px solid #0088CC",
             }}
+            target="_blank"
             href="https://t.me/galactic_reborn_offical_chat"
           >
             Telegram
