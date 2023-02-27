@@ -9,11 +9,10 @@ import ArrowImg from "../../assets/arrow-short";
 
 function FAQDesktop() {
   const theme = useTheme();
-  const isTablet = useMediaQuery("(max-width: 800px)");
+  const isTablet = useMediaQuery("(max-width: 850px)");
 
   const imageIsTabletStyle = {
-    borderRadius: "50px",
-    width: "300px",
+    display: "none",
   };
 
   const imageIsDefaultStyle = {
@@ -45,9 +44,8 @@ function FAQDesktop() {
             borderRadius: "50px",
             overflow: "hidden",
             height: "400px",
-            [theme.breakpoints.down(900)]: {
-              maxWidth: "100%",
-              flexDirection: "row",
+            [theme.breakpoints.down(850)]: {
+              backgroundColor: "transparent",
             },
           }}
         >
@@ -127,9 +125,23 @@ function FAQDesktop() {
             alignItems: "center",
             marginTop: "250px",
             marginBottom: "50px",
+            [theme.breakpoints.down(1300)]: {
+              paddingLeft: "50px",
+              paddingRight: "50px",
+            },
           }}
         >
-          <Typography fontSize="96px" fontFamily="Inter" fontWeight="700">
+          <Typography
+            fontFamily="Inter"
+            fontWeight="700"
+            sx={{
+              fontSize: "96px",
+              [theme.breakpoints.down(850)]: {
+                fontSize: "64px",
+                marginBottom: "20px",
+              },
+            }}
+          >
             Get in touch
           </Typography>
           <img src={contactEmail} alt="contact" style={{ marginTop: "-50px", maxWidth: "100%" }} />

@@ -15,11 +15,14 @@ function TeamMember({ avatar, nickname, roles, glow }: TeamMemberProps) {
   return (
     <Box
       sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
         [theme.breakpoints.down(1300)]: {
           width: "calc(50% - 12.5px)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+        },
+        [theme.breakpoints.down(600)]: {
+          width: "100%",
         },
       }}
     >

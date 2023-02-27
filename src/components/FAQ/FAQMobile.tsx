@@ -4,8 +4,12 @@ import { Box, Button, Container, Typography } from "@mui/material";
 
 import Background from "../Background";
 import ArrowImg from "../../assets/arrow-short";
+import contactEmail from "../../assets/contact.webp";
+import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 function FAQMobile() {
+  const theme = useTheme();
   return (
     <Background height="fit-content">
       <Container
@@ -52,8 +56,9 @@ function FAQMobile() {
             </Typography>
           </Box>
           <Button
+            disabled
             sx={{
-              color: "white",
+              color: "#C0C0C0 !important",
               display: "flex",
               fontSize: "14px",
               fontWeight: 700,
@@ -63,14 +68,39 @@ function FAQMobile() {
               borderRadius: "25px",
               columnGap: "10px",
               paddingLeft: "25px",
-              paddingRight: "15px",
+              paddingRight: "25px",
               minWidth: "111px",
               backgroundColor: "#6f5bde",
             }}
           >
-            View Docs
-            <ArrowImg direction={0} color="#FFF" />
+            Stay tuned...
           </Button>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            marginTop: "250px",
+            marginBottom: "50px",
+          }}
+        >
+          <Typography
+            fontFamily="Inter"
+            fontWeight="700"
+            sx={{
+              fontSize: "64px",
+              marginBottom: "20px",
+              textAlign: "center",
+              lineHeight: "1",
+              [theme.breakpoints.down(430)]: {
+                display: "none",
+              },
+            }}
+          >
+            Get in touch
+          </Typography>
+          <img src={contactEmail} alt="contact" style={{ marginTop: "-20px", maxWidth: "100%" }} />
         </Box>
       </Container>
     </Background>

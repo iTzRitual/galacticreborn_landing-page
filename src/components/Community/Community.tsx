@@ -4,7 +4,7 @@ import { Box, Button, Container, Typography, useMediaQuery } from "@mui/material
 
 import { Telegram, Twitter } from "@mui/icons-material";
 import Background from "../Background";
-import contactEmail from "../../assets/contact.png";
+import contactEmail from "../../assets/contact.webp";
 import Discord from "../Socials/Discord";
 
 const buttonDefaultStyle = {
@@ -39,6 +39,8 @@ const mobileContainerCommunityStyle = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  justifyContent: "center",
+  gap: "15px",
   color: "white",
 };
 
@@ -69,27 +71,20 @@ const defaultTextBoxCommunityStyle = {
 function Community() {
   const isMobile = useMediaQuery("(max-width: 600px)");
   return (
-    <Background
-      height={isMobile ? "fit-content" : "80vh"}
-      className="app-image-background-community"
-    >
+    <Background height="80vh" className="app-image-background-community">
       <Container
         id="community"
         maxWidth={false}
         sx={isMobile ? mobileContainerCommunityStyle : defaultContainerCommunityStyle}
       >
-        {isMobile ? (
-          <Box sx={isMobile ? mobileTextBoxCommunityStyle : defaultTextBoxCommunityStyle}>
-            <Typography fontSize="30px" fontFamily="Inter" fontWeight="700">
-              Get in touch
-            </Typography>
-            <img src={contactEmail} alt="contact" style={{ width: "389px" }} />
-          </Box>
-        ) : (
-          <Typography textTransform="none" fontSize="48px" fontFamily="Inter" fontWeight="700">
-            Join the community
-          </Typography>
-        )}
+        <Typography
+          textTransform="none"
+          fontSize={isMobile ? "32px" : "48px"}
+          fontFamily="Inter"
+          fontWeight="700"
+        >
+          Join the community
+        </Typography>
 
         <Box sx={isMobile ? mobileBoxCommunityStyle : defaultBoxCommunityStyle}>
           <Button

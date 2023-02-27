@@ -50,7 +50,15 @@ function Content() {
       </Typography>
       <Typography
         variant={isMobile ? "h4" : "h3"}
-        sx={{ color: "white", fontWeight: "bold", fontFamily: "inherit", fontSize: "48px" }}
+        sx={{
+          color: "white",
+          fontWeight: "bold",
+          fontFamily: "inherit",
+          fontSize: "48px",
+          [theme.breakpoints.down(1169)]: {
+            fontSize: "32px",
+          },
+        }}
       >
         IN YOUR HANDS
       </Typography>
