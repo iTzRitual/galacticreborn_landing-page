@@ -75,7 +75,7 @@ export default function Roadmap() {
           alignItems: "center",
           position: "relative",
           color: "white",
-          paddingBottom: "300px !important",
+          paddingBottom: "200px !important",
         }}
       >
         <Box

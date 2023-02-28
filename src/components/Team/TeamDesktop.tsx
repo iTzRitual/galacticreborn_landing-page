@@ -55,6 +55,11 @@ function TeamDesktop() {
           paddingBottom: "50px !important",
           paddingLeft: "50px !important",
           paddingRight: "50px !important",
+          [theme.breakpoints.down(600)]: {
+            paddingLeft: "0 !important",
+            paddingRight: "0 !important",
+            marginTop: "-20px",
+          },
         }}
       >
         <Typography fontSize="3rem" fontFamily="Space">
@@ -67,6 +72,7 @@ function TeamDesktop() {
             display: "flex",
             flexDirection: "column",
             rowGap: "15px",
+            alignItems: "center",
           }}
         >
           <Typography
@@ -81,6 +87,7 @@ function TeamDesktop() {
               },
               [theme.breakpoints.down(600)]: {
                 fontSize: "16px",
+                maxWidth: "375px",
               },
             }}
           >

@@ -6,6 +6,7 @@ import { Telegram, Twitter } from "@mui/icons-material";
 import Background from "../Background";
 import Discord from "../Socials/Discord";
 import MiniLogo from "./MiniLogo";
+import { useTheme } from "@mui/material/styles";
 
 const buttonDefaultStyle = {
   borderRadius: "20px",
@@ -54,6 +55,7 @@ const defaultContainerCommunityStyle = {
 
 function Community() {
   const isMobile = useMediaQuery("(max-width: 600px)");
+  const theme = useTheme();
   return (
     <Background height="80vh" className="app-image-background-community">
       <Container
@@ -66,6 +68,11 @@ function Community() {
           fontSize={isMobile ? "32px" : "48px"}
           fontFamily="Inter"
           fontWeight="700"
+          sx={{
+            [theme.breakpoints.down(385)]: {
+              fontSize: "24px",
+            },
+          }}
         >
           Join the community
         </Typography>

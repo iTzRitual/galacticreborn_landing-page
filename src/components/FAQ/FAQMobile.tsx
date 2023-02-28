@@ -105,8 +105,8 @@ function FAQMobile() {
               marginBottom: "20px",
               textAlign: "center",
               lineHeight: "1",
-              [theme.breakpoints.down(430)]: {
-                display: "none",
+              [theme.breakpoints.down(385)]: {
+                fontSize: "24px",
               },
             }}
           >

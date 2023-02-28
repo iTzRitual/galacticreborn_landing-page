@@ -1,5 +1,6 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
+import { useTheme } from "@mui/material/styles";
 
 import arrowStage from "../../assets/arrow_stages.svg";
 
@@ -46,7 +47,7 @@ const pointDesktopStyle = {
 const boxMobileStyle = {
   marginTop: "80px",
   width: "80%",
-  minWidth: "300px",
+  minWidth: "auto",
 };
 
 const boxDesktopStyle = {
@@ -57,7 +58,6 @@ const boxDesktopStyle = {
 
 function Stage({ stage, description, stagePoints }: StageProps) {
   const isMobile = useMediaQuery("(max-width: 600px)");
-
   return (
     <Box sx={isMobile ? boxMobileStyle : boxDesktopStyle}>
       <Typography

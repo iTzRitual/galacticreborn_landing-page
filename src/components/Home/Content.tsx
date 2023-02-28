@@ -51,6 +51,9 @@ export default function Content() {
               maxWidth: "100%",
               textAlign: "center",
             },
+            [theme.breakpoints.down(450)]: {
+              paddingTop: "50px",
+            },
             lineHeight: "1",
           }}
         >
@@ -62,6 +65,9 @@ export default function Content() {
                 lineHeight: 1,
                 textAlign: "center",
                 marginBottom: "40px",
+                [theme.breakpoints.down(385)]: {
+                  fontSize: "30px",
+                },
               }}
             >
               Galactic <br /> Reborn
@@ -101,9 +107,13 @@ export default function Content() {
               marginBottom: "10px",
               whiteSpace: "wrap",
               fontFamily: "Inter",
+              [theme.breakpoints.down(385)]: {
+                fontSize: "30px",
+                lineHeight: "30px",
+              },
             }}
           >
-            Endless galaxies <br /> is waiting for you
+            Endless galaxies <br /> are waiting for you!
           </Typography>
           <Typography
             sx={{
