@@ -22,16 +22,13 @@ html {
   overflow-x: hidden;
   
 }
-
-#app-container.mobileMenuOpen {
-  transform: translateX(100vw);
-}
 #app-mobile-menu {
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(../background_menu.jpg);
   background-size: auto 100%;
   background-position: center;
   background-repeat: no-repeat;
+  z-index: 100;
 }
 #app-mobile-menu.mobileMenuOpen {
   transform: translateX(100vw);
