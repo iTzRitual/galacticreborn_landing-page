@@ -2,11 +2,8 @@ import React from "react";
 
 import { Box, Button, Container, Typography } from "@mui/material";
 
-import Background from "../Background";
-import ArrowImg from "../../assets/arrow-short";
-import contactEmail from "../../assets/contact.webp";
-import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import Background from "../Background";
 
 function FAQMobile() {
   const theme = useTheme();
@@ -100,7 +97,21 @@ function FAQMobile() {
           >
             Get in touch
           </Typography>
-          <img src={contactEmail} alt="contact" style={{ marginTop: "-20px", maxWidth: "100%" }} />
+          <Typography
+            fontFamily="Inter"
+            fontWeight="700"
+            sx={{
+              fontSize: "32px",
+              marginBottom: "20px",
+              textAlign: "center",
+              lineHeight: "1",
+              [theme.breakpoints.down(430)]: {
+                display: "none",
+              },
+            }}
+          >
+            hi@galacticreborn.io
+          </Typography>
         </Box>
       </Container>
     </Background>

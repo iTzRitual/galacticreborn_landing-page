@@ -44,6 +44,10 @@ function Content() {
           marginTop: "81px",
           fontFamily: "inherit",
           fontSize: "48px",
+          letterSpacing: "2px",
+          [theme.breakpoints.down(1169)]: {
+            fontSize: "32px",
+          },
         }}
       >
         UNIVERSE
@@ -55,6 +59,7 @@ function Content() {
           fontWeight: "bold",
           fontFamily: "inherit",
           fontSize: "48px",
+          letterSpacing: "2px",
           [theme.breakpoints.down(1169)]: {
             fontSize: "32px",
           },

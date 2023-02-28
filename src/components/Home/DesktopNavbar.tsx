@@ -1,10 +1,10 @@
-import { Box, Button, Container, Toolbar } from "@mui/material";
+import { Box, Button, Container, Toolbar, Typography } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 import React, { useEffect } from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Socials from "./Socials";
-import grLogo from "../../assets/galactic_reborn_logo.png";
+// import grLogo from "../../assets/galactic_reborn_logo.png";
 
 const pages = ["Home", "About", "Roadmap", "Team", "Docs"];
 
@@ -59,7 +59,23 @@ function DesktopNavbar() {
     >
       <Toolbar disableGutters>
         <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
-          {useMediaQuery(theme.breakpoints.up(1169)) && <img src={grLogo} alt="galactic reborn" />}
+          {useMediaQuery(theme.breakpoints.up(1169)) && (
+            <Typography
+              sx={{
+                color: "white",
+                margin: 0,
+                height: "75px",
+                fontSize: "36px",
+                fontFamily: "Space",
+                lineHeight: 1,
+                textAlign: "center",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              Galactic <br /> Reborn
+            </Typography>
+          )}
           <Box
             sx={{
               flexGrow: 1,

@@ -63,7 +63,10 @@ export default function Roadmap() {
   const theme = useTheme();
   const isMobile = useMediaQuery("(max-width: 600px)");
   return (
-    <Background height="fit-content" className="app-background-roadmap">
+    <Background
+      height="fit-content"
+      className={isMobile ? "app-background-roadmap-mobile" : "app-background-roadmap"}
+    >
       <Container
         id="roadmap"
         sx={{

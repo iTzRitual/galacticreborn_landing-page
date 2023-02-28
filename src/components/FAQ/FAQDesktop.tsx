@@ -3,9 +3,7 @@ import React from "react";
 import { Box, Button, Container, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Background from "../Background";
-import faqImage from "/gcrlogo.svg";
-import contactEmail from "../../assets/contact.webp";
-import ArrowImg from "../../assets/arrow-short";
+import faqImage from "../../../public/gcrlogo.svg";
 
 function FAQDesktop() {
   const theme = useTheme();
@@ -144,7 +142,19 @@ function FAQDesktop() {
           >
             Get in touch
           </Typography>
-          <img src={contactEmail} alt="contact" style={{ marginTop: "-50px", maxWidth: "100%" }} />
+          <Typography
+            fontFamily="Inter"
+            fontWeight="700"
+            sx={{
+              fontSize: "72px",
+              [theme.breakpoints.down(850)]: {
+                fontSize: "54px",
+                marginBottom: "20px",
+              },
+            }}
+          >
+            hi@galacticreborn.io
+          </Typography>
         </Box>
       </Container>
     </Background>

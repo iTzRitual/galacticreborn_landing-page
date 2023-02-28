@@ -33,7 +33,7 @@ export default function MobileMenu() {
     <Box
       id="app-mobile-menu"
       sx={{
-        width: "100vw",
+        width: "100%",
         height: "100vh",
         position: "fixed",
         left: "-100vw",
@@ -61,8 +61,8 @@ export default function MobileMenu() {
           flexGrow: "2",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
-          gap: "35px",
+          justifyContent: "start",
+          gap: "25px",
         }}
       >
         {pages.map((page) => (
@@ -79,6 +79,16 @@ export default function MobileMenu() {
             {page}
           </Button>
         ))}
+        {/* <Button
+          sx={{
+            borderBottom: "2px solid transparent",
+            fontSize: "32px",
+            fontFamily: "Space",
+            color: "#C0C0C0",
+          }}
+        >
+          Coming soon
+        </Button> */}
       </Box>
     </Box>
   );

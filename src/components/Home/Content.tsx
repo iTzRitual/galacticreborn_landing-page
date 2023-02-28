@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button, Container, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import ArrowImg from "../../assets/arrow-short";
+import ArrowImg from "../ShortArrow";
 
 const buttonDefaultStyle = {
   color: "white",
@@ -103,7 +103,7 @@ export default function Content() {
               fontFamily: "Inter",
             }}
           >
-            Endless galaxy <br /> is waiting for you
+            Endless galaxies <br /> is waiting for you
           </Typography>
           <Typography
             sx={{
@@ -157,6 +157,8 @@ export default function Content() {
                 ...buttonDefaultStyle,
                 color: "#6f5bde",
               }}
+              target="_blank"
+              href="https://t.me/galactic_reborn_official_chat"
             >
               Telegram
               <ArrowImg direction={0} color="#6F5BDE" />
@@ -166,6 +168,8 @@ export default function Content() {
                 ...buttonDefaultStyle,
                 backgroundColor: "#6f5bde",
               }}
+              target="_blank"
+              href="https://discord.gg/galacticreborn"
             >
               Discord
               <ArrowImg direction={0} color="#FFF" />
