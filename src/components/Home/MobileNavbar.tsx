@@ -18,7 +18,7 @@ function MobileNavbar() {
     <Box
       sx={{
         color: "white",
-        margin: "20px 25px 0 10px",
+        margin: "20px 0 0 0",
         display: "flex",
         justifyContent: "space-between",
       }}

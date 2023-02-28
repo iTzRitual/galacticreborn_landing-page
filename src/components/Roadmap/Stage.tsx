@@ -3,11 +3,13 @@ import React from "react";
 import { useTheme } from "@mui/material/styles";
 
 import arrowStage from "../../assets/arrow_stages.svg";
+import check from "../../assets/check_ring_round_light.svg";
 
 interface StageProps {
   stage: string;
   description: string;
   stagePoints: string[];
+  readyPoints: boolean[];
 }
 
 const descriptionMobileStyle = {
@@ -56,7 +58,7 @@ const boxDesktopStyle = {
   minWidth: "500px",
 };
 
-function Stage({ stage, description, stagePoints }: StageProps) {
+function Stage({ stage, description, stagePoints, readyPoints }: StageProps) {
   const isMobile = useMediaQuery("(max-width: 600px)");
   return (
     <Box sx={isMobile ? boxMobileStyle : boxDesktopStyle}>
@@ -69,7 +71,7 @@ function Stage({ stage, description, stagePoints }: StageProps) {
       <Typography sx={isMobile ? descriptionMobileStyle : descriptionDesktopStyle}>
         {description}
       </Typography>
-      {stagePoints.map((point) => (
+      {stagePoints.map((point, index) => (
         <Box
           key={point}
           sx={{
@@ -78,7 +80,7 @@ function Stage({ stage, description, stagePoints }: StageProps) {
             marginTop: "20px",
           }}
         >
-          <img src={arrowStage} alt="arrow" />
+          <img src={readyPoints[index] ? check : arrowStage} alt="arrow" />
           <Typography sx={isMobile ? pointMobileStyle : pointDesktopStyle}>{point}</Typography>
         </Box>
       ))}

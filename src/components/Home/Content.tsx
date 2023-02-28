@@ -94,9 +94,10 @@ export default function Content() {
               lineHeight: "1rem",
               fontFamily: "Inter",
               color: "#C0C0C0;",
+              textTransform: "uppercase",
             }}
           >
-            BROWSER P&E STRATEGIC GAME
+            Free to play P&E Strategy Game
           </Typography>
           <Typography
             sx={{
@@ -179,7 +180,7 @@ export default function Content() {
                 backgroundColor: "#6f5bde",
               }}
               target="_blank"
-              href="https://discord.gg/galacticreborn"
+              href="https://discord.gg/ydjeQ8Pehw"
             >
               Discord
               <ArrowImg direction={0} color="#FFF" />

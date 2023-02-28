@@ -8,54 +8,59 @@ import progressBar from "../../assets/in_progress.svg";
 interface IStage {
   description: string;
   points: string[];
+  ready: boolean[];
 }
 
 const stages = {
-  "Stage 1": {
-    description: "Development and Community Building",
+  "Stage 0": {
+    description: "Genesis",
     points: [
-      "Development of basic game mechanics and the core game loop",
-      "Implementation of basic in-game currency and economy",
-      "Adding token use-cases in the game to bring more value and deflationary models as one of the tokens utility",
-      "Community building",
-      "First Galactic Pass mint",
-      "Conducting $GCR token Presale for whitelisted members on our website",
+      "Concept and Key Features",
+      "Market Research",
+      "Platform and Blockchain Technology",
+      "Scope, Timeline, and Budget",
+      "Development Team",
     ],
+    ready: [true, true, true, true, true],
+  },
+  "Stage 1": {
+    description: "Cosmic Creation",
+    points: [
+      "Whitepaper and Comprehensive Documentation",
+      "Game Mechanics and Token Integration",
+      "Community Building",
+    ],
+    ready: [true, true, false],
   },
   "Stage 2": {
-    description: "Public Sale & Alpha Game Release",
-    points: [
-      "Conducting Public Sale of the $GCR token",
-      "Staking and liquidity providing incentives",
-      "Release of alpha version of the game and presentation for the public",
-      "Release of beta version Galactic Pass Holders for testing and feedback",
-      "Implementation of additional gameplay features",
-    ],
+    description: "Intergalactic Journey",
+    points: ["Astral Pass", "Presale", "Public Sale"],
+    ready: [false, false, false],
   },
   "Stage 3": {
-    description: "Full Release and Deflationary Mechanisms",
-    points: [
-      "Release of full version of the game on the browser",
-      "Introduction of deflationary token mechanisms",
-      "Introduction of new in-game events and challenges",
-      "Expansion of the game to difference chains",
-    ],
+    description: "Starforge",
+    points: ["Alpha Release", "Staking Incentives", "Galaxy Explorer NFT Mint"],
+    ready: [false, false, false],
   },
   "Stage 4": {
-    description: "Mobile Compatibility & Further Token Utilities",
-    points: [
-      "Implementation of mobile compatibility",
-      "Introduction of new in-game items and equipment",
-      "Deployment of features into the game which will allow players to gain $GCR through a risk-to-earn mechanics",
-    ],
+    description: "Celestial Expansion",
+    points: ["Beta Release", "Galaxy Explorer In-Game Utilities", "Additional Gameplay Features"],
+    ready: [false, false, false],
   },
   "Stage 5": {
-    description: "Tournaments and Referral System",
-    points: [
-      "Introduction of a referral system",
-      "Development of in-game tournaments and leaderboards",
-      "Release of Galactic Reborn Expansion series",
-    ],
+    description: "Galactic Synergy",
+    points: ["Full Release", "Full Mobile Compatibility (RWD)", "Marketing Push"],
+    ready: [false, false, false],
+  },
+  "Stage 6": {
+    description: "Universal Alliances",
+    points: ["Referral System", "Cosmetic and Utility NFTs", "Internationalization "],
+    ready: [false, false, false],
+  },
+  "Stage 7": {
+    description: "Infinite Horizons",
+    points: ["Ongoing Development", "Regular Updates and Optimization", "Long-term Sustainability"],
+    ready: [false, false, false],
   },
 } as Record<string, IStage>;
 
@@ -94,13 +99,14 @@ export default function Roadmap() {
             stage={stage}
             description={stages[stage].description}
             stagePoints={stages[stage].points}
+            readyPoints={stages[stage].ready}
           />
         ))}
         <Box
           className="roadmap__progressbar"
           sx={{
             position: "absolute",
-            top: "13%",
+            top: "11%",
             transform: "translateX(-50%)",
             width: "100%",
             [theme.breakpoints.down(1369)]: {

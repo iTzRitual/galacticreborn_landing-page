@@ -47,7 +47,7 @@ export default function MobileMenu() {
       <Box
         sx={{
           color: "white",
-          margin: "20px 25px 0 10px",
+          margin: "20px 25px 0 16px",
           display: "flex",
           justifyContent: "start",
         }}

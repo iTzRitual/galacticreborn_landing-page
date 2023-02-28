@@ -30,7 +30,7 @@ export default function Socials() {
       >
         <Medium />
       </IconButton>
-      <IconButton href="https://discord.com/invite/CQqm2D8J3U">
+      <IconButton href="https://discord.gg/ydjeQ8Pehw">
         <Discord />
       </IconButton>
       <IconButton href="https://twitter.com/GalacticReborn">

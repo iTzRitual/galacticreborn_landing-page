@@ -1,12 +1,12 @@
 import React from "react";
 
 import { Box, Button, Container, Typography, useMediaQuery } from "@mui/material";
-
+import { useTheme } from "@mui/material/styles";
 import { Telegram, Twitter } from "@mui/icons-material";
 import Background from "../Background";
 import Discord from "../Socials/Discord";
 import MiniLogo from "./MiniLogo";
-import { useTheme } from "@mui/material/styles";
+
 
 const buttonDefaultStyle = {
   borderRadius: "20px",
@@ -85,7 +85,7 @@ function Community() {
               border: "2px solid #7289DA",
             }}
             target="_blank"
-            href="https://discord.com/invite/CQqm2D8J3U"
+            href="https://discord.gg/ydjeQ8Pehw"
           >
             Discord
             <Discord color="#7289DA" className="discord" />
